@@ -21,6 +21,7 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
       class="booking-form"
       action="https://api.web3forms.com/submit"
       method="POST"
+      novalidate
     >
       <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
       <input type="hidden" name="subject" value="New Strategy Call Request — Indispensable Digital" />
@@ -30,28 +31,64 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
       <div class="form-row">
         <div class="form-field">
           <label for="name">Full name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            maxlength="80"
+            pattern="[A-Za-zÀ-ɏऀ-ॿ .'-]{2,80}"
+            placeholder="Your name"
+          />
+          <span class="field-error" data-error-for="name"></span>
         </div>
         <div class="form-field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@company.com" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            maxlength="120"
+            placeholder="you@company.com"
+          />
+          <span class="field-error" data-error-for="email"></span>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-field">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            minlength="7"
+            maxlength="20"
+            pattern="[0-9+\-\s()]{7,20}"
+            placeholder="+91 00000 00000"
+          />
+          <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
           <label for="company">Company / Brand</label>
-          <input type="text" id="company" name="company" placeholder="Your brand name" />
+          <input type="text" id="company" name="company" maxlength="100" placeholder="Your brand name" />
         </div>
       </div>
 
       <div class="form-field">
         <label for="message">What are you looking to achieve?</label>
-        <textarea id="message" name="message" rows="4" required placeholder="Tell us a bit about your brand and what growth challenge you're facing."></textarea>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          required
+          minlength="20"
+          maxlength="2000"
+          placeholder="Tell us a bit about your brand and what growth challenge you're facing."
+        ></textarea>
+        <span class="field-error" data-error-for="message"></span>
       </div>
 
       <button type="submit" class="btn btn-primary" style="width:100%;text-align:center">Send &amp; Book My Call</button>
@@ -65,9 +102,67 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
   const form = document.getElementById('booking-form') as HTMLFormElement | null;
   const status = form?.querySelector('.form-status') as HTMLParagraphElement | null;
 
+  const validators: Record<string, (value: string) => string | null> = {
+    name: (v) => {
+      if (v.trim().length < 2) return 'Please enter your full name.';
+      if (!/^[A-Za-zÀ-ɏऀ-ॿ ,.'-]{2,80}$/.test(v.trim())) {
+        return 'Name can only contain letters, spaces, and basic punctuation.';
+      }
+      return null;
+    },
+    email: (v) => {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return 'Please enter a valid email address.';
+      return null;
+    },
+    phone: (v) => {
+      if (!v.trim()) return null; // optional field
+      if (!/^[0-9+\-\s()]{7,20}$/.test(v.trim())) return 'Please enter a valid phone number.';
+      if (v.replace(/\D/g, '').length < 7) return 'Please enter a valid phone number.';
+      return null;
+    },
+    message: (v) => {
+      if (v.trim().length < 20) return 'Please share a few more details (at least 20 characters).';
+      return null;
+    },
+  };
+
+  function showFieldError(fieldName: string, message: string | null) {
+    const errorEl = form?.querySelector<HTMLElement>(`[data-error-for="${fieldName}"]`);
+    const input = form?.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[name="${fieldName}"]`);
+    if (errorEl) errorEl.textContent = message ?? '';
+    if (input) input.classList.toggle('invalid', !!message);
+  }
+
+  function validateField(fieldName: string): boolean {
+    const input = form?.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[name="${fieldName}"]`);
+    if (!input) return true;
+    const validator = validators[fieldName];
+    const error = validator ? validator(input.value) : null;
+    showFieldError(fieldName, error);
+    return !error;
+  }
+
+  Object.keys(validators).forEach((fieldName) => {
+    const input = form?.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[name="${fieldName}"]`);
+    input?.addEventListener('blur', () => validateField(fieldName));
+    input?.addEventListener('input', () => {
+      if (input.classList.contains('invalid')) validateField(fieldName);
+    });
+  });
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!status) return;
+
+    const fieldsValid = Object.keys(validators)
+      .map((fieldName) => validateField(fieldName))
+      .every(Boolean);
+
+    if (!fieldsValid) {
+      status.textContent = 'Please fix the highlighted fields above.';
+      status.className = 'form-status error';
+      return;
+    }
 
     const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     submitBtn.disabled = true;
@@ -108,6 +203,8 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
   .form-field input,.form-field textarea{background:var(--navy-3);border:1px solid var(--line-soft);border-radius:6px;padding:12px 14px;color:var(--cream);font-family:'Inter',sans-serif;font-size:.95rem;transition:.2s;resize:vertical}
   .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--copper)}
   .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted-cream);opacity:.5}
+  .form-field input.invalid,.form-field textarea.invalid{border-color:#e26666}
+  .field-error{font-size:.8rem;color:#e26666;min-height:1.2em}
   .form-status{font-size:.9rem;min-height:1.2em;font-weight:400}
   .form-status.success{color:#7ec89a}
   .form-status.error{color:#e26666}
