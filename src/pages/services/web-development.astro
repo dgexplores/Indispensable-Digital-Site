@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DefinitionBlock from '../../components/DefinitionBlock.astro';
+import Faq from '../../components/Faq.astro';
+import CtaSection from '../../components/CtaSection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Website Development',
+  provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  areaServed: 'Worldwide',
+  description:
+    'Conversion-focused website design and development — custom builds, Shopify, WordPress and landing pages — built fast, mobile-first, and SEO-ready from day one.',
+};
+
+const faqs = [
+  {
+    q: 'Do you build on Shopify or WordPress?',
+    a: "Both, depending on what the business needs. Shopify for ecommerce and D2C brands, WordPress or a custom build for content-driven or B2B sites. We choose the platform based on what you're actually trying to do, not a default preference.",
+  },
+  {
+    q: 'Do you redesign existing websites, or only build new ones?',
+    a: "Both. A redesign engagement starts with an audit of what's underperforming — speed, conversion, mobile experience, SEO foundation — before we touch design, so the rebuild actually fixes the constraint rather than just looking newer.",
+  },
+  {
+    q: 'Are landing pages included in website development?',
+    a: 'Yes — landing pages built specifically for a campaign or offer are a core part of our web development work, built to match whatever paid or organic traffic is being sent to them.',
+  },
+  {
+    q: 'Is the website built with SEO in mind from the start?',
+    a: "Yes. Every build starts on a technically sound, fast-loading foundation — clean markup, structured data, and Core Web Vitals considered from the first sprint, not bolted on afterward.",
+  },
+];
+---
+
+<BaseLayout
+  title="Website Development Company | Indispensable Digital"
+  description="Conversion-focused website design and development — custom builds, Shopify, WordPress and landing pages — fast, mobile-first, and SEO-ready from day one."
+  schema={[serviceSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Website Development', href: '/services/web-development/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Web Development</div>
+      <h1>Websites built to <span class="copper">convert, not just load.</span></h1>
+      <p>Custom builds, Shopify, WordPress and landing pages — fast, mobile-first, and built on an SEO-ready technical foundation from the first sprint.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <DefinitionBlock
+        term="A conversion-focused website"
+        definition="is built to load fast, work flawlessly on mobile, and turn visitors into leads or customers — not just look good. We design and build websites on modern, SEO-friendly foundations from the start."
+      />
+      <div class="why-grid" style="grid-template-columns:1fr">
+        <div class="why-col why-us" style="border-left:none">
+          <h3>What's included</h3>
+          <ul>
+            <li><span class="tick">✓</span> Custom website design and development</li>
+            <li><span class="tick">✓</span> Shopify and WordPress builds</li>
+            <li><span class="tick">✓</span> Landing pages built for conversion</li>
+            <li><span class="tick">✓</span> Site speed and Core Web Vitals optimization</li>
+            <li><span class="tick">✓</span> SEO-friendly technical foundation from day one</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Web Development FAQ" heading="Questions about our website development work." />
+
+  <CtaSection
+    heading="Ready for a website that <span class='copper'>actually converts?</span>"
+    sub="Book a strategy call and we'll audit your current site's speed, mobile experience and conversion path — no pitch, just a straight read."
+  />
+</BaseLayout>

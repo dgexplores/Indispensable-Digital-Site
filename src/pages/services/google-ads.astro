@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DefinitionBlock from '../../components/DefinitionBlock.astro';
+import Faq from '../../components/Faq.astro';
+import CtaSection from '../../components/CtaSection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Google Ads Management',
+  provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  areaServed: 'Worldwide',
+  description:
+    'End-to-end Google Ads management — Search, Shopping, Performance Max and Display — built around ROAS and CPA, not just clicks.',
+};
+
+const faqs = [
+  {
+    q: 'What does a Google Ads agency actually manage?',
+    a: 'Full account architecture and ongoing management across Search, Shopping, Performance Max and Display — keyword and audience strategy, ad creative, bidding, conversion tracking, and landing page alignment — so spend is tied to a measurable return, not just impressions or clicks.',
+  },
+  {
+    q: "How is Performance Max different from standard Search campaigns?",
+    a: "Performance Max lets Google's automation bid across Search, Display, YouTube, and Shopping inventory from a single campaign, optimizing toward your stated conversion goal. It works best layered on top of a well-structured Search account and clean conversion data, not as a replacement for one.",
+  },
+  {
+    q: 'Do you build landing pages as part of Google Ads management?',
+    a: "Yes, when needed. A high-performing ad account is limited by where it sends traffic, so we align landing pages and offers with the campaigns running against them rather than pointing ads at a generic homepage.",
+  },
+  {
+    q: "What's a realistic timeline to see results from Google Ads?",
+    a: 'Search campaigns with existing intent can show early signal within the first few weeks; Performance Max and prospecting campaigns typically need a longer learning period. We report against ROAS/CPA from day one so you can see the trend, not just a lagging final number.',
+  },
+];
+---
+
+<BaseLayout
+  title="Google Ads Agency & PPC Management | Indispensable Digital"
+  description="Google Ads management built for ROI — Search, Shopping, Performance Max and Display, run by a performance marketing agency that reports on ROAS, not clicks."
+  schema={[serviceSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Google Ads', href: '/services/google-ads/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Paid Search</div>
+      <h1>Google Ads built for <span class="copper">ROI, not spend.</span></h1>
+      <p>Search, Shopping, Performance Max and Display — managed as one account strategy, measured against pipeline and revenue rather than clicks or impressions.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <DefinitionBlock
+        term="A Google Ads agency"
+        definition="manages your Search, Shopping, Performance Max and Display campaigns end-to-end — keyword and audience strategy, ad creative, bidding, and landing pages — so every unit of ad spend is tied to a measurable return."
+      />
+      <div class="why-grid" style="grid-template-columns:1fr">
+        <div class="why-col why-us" style="border-left:none">
+          <h3>What's included</h3>
+          <ul>
+            <li><span class="tick">✓</span> Account audit and campaign architecture</li>
+            <li><span class="tick">✓</span> Search, Shopping, Performance Max and Display management</li>
+            <li><span class="tick">✓</span> Conversion tracking and bid strategy setup</li>
+            <li><span class="tick">✓</span> Ongoing optimization against ROAS/CPA, not vanity metrics</li>
+            <li><span class="tick">✓</span> Landing page and offer alignment for stronger quality scores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Google Ads FAQ" heading="Questions about Google Ads management." />
+
+  <CtaSection
+    heading="Ready to make Google Ads <span class='copper'>accountable to revenue?</span>"
+    sub="Book a strategy call and we'll audit where your current account is leaking spend — no pitch, just a straight read."
+  />
+</BaseLayout>

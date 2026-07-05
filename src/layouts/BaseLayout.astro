@@ -24,10 +24,11 @@ const orgSchema = {
   '@type': 'ProfessionalService',
   '@id': 'https://www.indispensabledigital.com/#organization',
   name: 'Indispensable Digital',
-  alternateName: 'Indispensable Digital Growth Consultancy',
+  alternateName: 'Indispensable Digital — Performance Marketing Agency',
   description:
-    'A premium growth consultancy for founders who intend to lead their category. Growth strategy, brand positioning, PR, content, and performance marketing engineered as one integrated system.',
+    'A premium performance marketing agency for category-leading consumer and D2C brands worldwide. Growth strategy, brand positioning, Google Ads, Meta Ads, SEO, website development, and content engineered as one integrated system.',
   slogan: 'Built to Make Brands Indispensable',
+  serviceType: 'Performance Marketing Agency',
   url: 'https://www.indispensabledigital.com',
   logo: logoURL,
   image: logoURL,
@@ -56,13 +57,22 @@ const orgSchema = {
   knowsAbout: [
     'Growth Strategy',
     'Brand Positioning',
+    'Brand Strategy',
     'PR & Communications',
     'Content Strategy',
     'YouTube Growth',
     'Performance Marketing',
+    'Google Ads Management',
+    'Meta Ads Management',
+    'Technical SEO',
+    'Website Development',
+    'Conversion Rate Optimization',
+    'Ecommerce Marketing',
+    'Marketing Analytics',
     'Customer Acquisition',
     'Marketing Intelligence',
   ],
+  areaServed: 'Worldwide',
   sameAs: ['https://www.linkedin.com/company/indispensabledigital/'],
 };
 
@@ -73,7 +83,7 @@ const webSiteSchema = {
   name: 'Indispensable Digital',
   url: 'https://www.indispensabledigital.com',
   publisher: { '@id': 'https://www.indispensabledigital.com/#organization' },
-  inLanguage: 'en-IN',
+  inLanguage: 'en',
 };
 
 // Bump this date whenever page content is meaningfully updated — it feeds the
@@ -89,7 +99,7 @@ const webPageSchema = {
   description,
   isPartOf: { '@id': 'https://www.indispensabledigital.com/#website' },
   about: { '@id': 'https://www.indispensabledigital.com/#organization' },
-  inLanguage: 'en-IN',
+  inLanguage: 'en',
   datePublished: '2026-07-05',
   dateModified: SITE_LAST_UPDATED,
 };
@@ -126,7 +136,7 @@ const jsonLdBlocks = [orgSchema, webSiteSchema, webPageSchema, ...schema];
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />

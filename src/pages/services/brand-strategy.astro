@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DefinitionBlock from '../../components/DefinitionBlock.astro';
+import Faq from '../../components/Faq.astro';
+import CtaSection from '../../components/CtaSection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Brand Strategy',
+  provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  areaServed: 'Worldwide',
+  description:
+    'Brand positioning and strategy — the sharp, defensible category position and narrative that makes a brand the obvious choice, and the foundation every other marketing channel builds on.',
+};
+
+const faqs = [
+  {
+    q: "What's the difference between brand strategy and brand identity or logo design?",
+    a: 'Brand strategy is the thinking — your category position, narrative, and why customers should choose you over alternatives. Brand identity (logo, visual system, tone of voice) is the expression of that strategy. Identity work without a strategy behind it usually looks good and says nothing.',
+  },
+  {
+    q: 'How long does a brand strategy engagement take?',
+    a: "It's a focused, time-boxed sprint rather than an open-ended retainer — enough time to properly research the category and competitive landscape, then define and stress-test the position with your team, with the exact timeline agreed upfront based on scope.",
+  },
+  {
+    q: 'Do you also handle logo and visual identity design?',
+    a: 'Brand strategy defines the position and narrative; we can carry that into identity direction, though the strategy work itself is what makes any subsequent design work — logo, website, ads — actually land with customers.',
+  },
+  {
+    q: 'Is brand strategy only useful for new companies, or established ones too?',
+    a: "Both. New companies need it to enter a category clearly; established companies often need it more — to reposition after growth, a pivot, or increased competition has made the original narrative stale.",
+  },
+];
+---
+
+<BaseLayout
+  title="Brand Strategy Agency | Indispensable Digital"
+  description="Brand positioning and strategy — the defensible category position and narrative that makes a brand the obvious choice, from a premium marketing agency."
+  schema={[serviceSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Brand Strategy', href: '/services/brand-strategy/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Positioning &amp; Narrative</div>
+      <h1>The strategy every <span class="copper">other channel builds on.</span></h1>
+      <p>A sharp, defensible category position and narrative — the foundation that makes paid ads, content, and design actually land with the right customers.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <DefinitionBlock
+        term="Brand strategy"
+        definition="is the sharp, defensible position and narrative that makes a company the obvious choice in its category — informing everything from messaging and identity to how paid and organic marketing gets built on top of it."
+      />
+      <div class="why-grid" style="grid-template-columns:1fr">
+        <div class="why-col why-us" style="border-left:none">
+          <h3>What's included</h3>
+          <ul>
+            <li><span class="tick">✓</span> Brand positioning and messaging strategy</li>
+            <li><span class="tick">✓</span> Competitive and category analysis</li>
+            <li><span class="tick">✓</span> Brand identity direction — visual and verbal</li>
+            <li><span class="tick">✓</span> Brand guidelines for consistent execution</li>
+            <li><span class="tick">✓</span> Alignment workshops with your leadership team</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Brand Strategy FAQ" heading="Questions about brand positioning and strategy." />
+
+  <CtaSection
+    heading="Ready for a position <span class='copper'>competitors can't copy?</span>"
+    sub="Book a strategy call and we'll pressure-test your current positioning — no pitch, just a straight read."
+  />
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DefinitionBlock from '../../components/DefinitionBlock.astro';
+import Faq from '../../components/Faq.astro';
+import CtaSection from '../../components/CtaSection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Marketing Analytics',
+  provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  areaServed: 'Worldwide',
+  description:
+    'GA4, Google Tag Manager, and server-side tracking setup — accurate conversion tracking and marketing analytics so every ad and content decision is based on real data.',
+};
+
+const faqs = [
+  {
+    q: 'What is server-side tracking and why does it matter?',
+    a: "Server-side tracking sends conversion data from your server directly to platforms like Meta and Google, instead of relying only on browser-based pixels that ad blockers and privacy settings increasingly block. It typically recovers a meaningful share of conversions that browser-only tracking misses, which directly improves ad platform optimization.",
+  },
+  {
+    q: 'Do you migrate accounts from Universal Analytics to GA4?',
+    a: "Yes — GA4 setup and migration, including event mapping, conversion configuration, and Google Tag Manager implementation, is core to this service.",
+  },
+  {
+    q: 'What are Enhanced Conversions and do I need them?',
+    a: "Enhanced Conversions is Google's method for improving conversion measurement accuracy using hashed first-party data. If you're running Google Ads at any meaningful spend, it's a standard, low-effort setup that improves bidding accuracy — we include it as part of tracking implementation.",
+  },
+  {
+    q: 'Can you set this up on an existing site without breaking anything?',
+    a: 'Yes — tracking implementation is tested in a staging or preview environment before going live, and we validate that existing tracking (if any) keeps working through the transition.',
+  },
+];
+---
+
+<BaseLayout
+  title="GA4 Setup & Marketing Analytics Services | Indispensable Digital"
+  description="GA4, Google Tag Manager, and server-side tracking setup — accurate conversion tracking so every ad and content decision is based on real data."
+  schema={[serviceSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Analytics', href: '/services/analytics/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Tracking &amp; Analytics</div>
+      <h1>Every decision, backed by <span class="copper">accurate data.</span></h1>
+      <p>GA4, Google Tag Manager, and server-side tracking — set up correctly, so your ad platforms and reporting are working from real numbers, not guesswork.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <DefinitionBlock
+        term="Marketing analytics"
+        definition="starts with getting your tracking right — GA4, Google Tag Manager, server-side tracking and the Meta Pixel — so every marketing decision is based on accurate data, not guesswork."
+      />
+      <div class="why-grid" style="grid-template-columns:1fr">
+        <div class="why-col why-us" style="border-left:none">
+          <h3>What's included</h3>
+          <ul>
+            <li><span class="tick">✓</span> GA4 setup and configuration</li>
+            <li><span class="tick">✓</span> Google Tag Manager implementation</li>
+            <li><span class="tick">✓</span> Server-side tracking — Conversions API, enhanced conversions</li>
+            <li><span class="tick">✓</span> Meta Pixel setup and event mapping</li>
+            <li><span class="tick">✓</span> Custom dashboards and reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Analytics FAQ" heading="Questions about tracking and marketing analytics." />
+
+  <CtaSection
+    heading="Ready to trust <span class='copper'>your own data?</span>"
+    sub="Book a strategy call and we'll audit your current tracking setup for gaps — no pitch, just a straight read."
+  />
+</BaseLayout>

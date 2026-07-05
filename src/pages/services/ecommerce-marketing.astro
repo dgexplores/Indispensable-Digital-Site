@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DefinitionBlock from '../../components/DefinitionBlock.astro';
+import Faq from '../../components/Faq.astro';
+import CtaSection from '../../components/CtaSection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Ecommerce Marketing',
+  provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  areaServed: 'Worldwide',
+  description:
+    'Ecommerce and D2C marketing — Shopify-native paid acquisition, SEO, conversion optimization and product launch strategy built around the ecommerce funnel.',
+};
+
+const faqs = [
+  {
+    q: 'Do you specialize in Shopify specifically?',
+    a: "Shopify is the most common platform we work on for ecommerce and D2C brands, and our approach is built around its specific structure — product and collection pages, apps, checkout — though the underlying acquisition and CRO strategy applies across ecommerce platforms.",
+  },
+  {
+    q: 'Do you handle product launch marketing?',
+    a: 'Yes. Product launches need a coordinated push across paid, organic, and email/retention at once — we plan and run that as a single campaign rather than treating each channel separately.',
+  },
+  {
+    q: 'Is this only for D2C brands, or does it work for other ecommerce models?',
+    a: "D2C is where most of our ecommerce work sits, but the same acquisition-plus-retention-plus-CRO system applies to marketplaces and hybrid ecommerce models — the channel mix just shifts based on where your customers actually are.",
+  },
+  {
+    q: "What's the difference between ecommerce marketing and general performance marketing?",
+    a: 'Ecommerce marketing is performance marketing built specifically around the purchase funnel — product feed quality, cart and checkout conversion, repeat-purchase and retention economics — rather than generic lead generation.',
+  },
+];
+---
+
+<BaseLayout
+  title="Ecommerce Marketing Agency | Indispensable Digital"
+  description="Ecommerce and D2C marketing — Shopify-native paid acquisition, SEO, conversion optimization and product launch strategy built around the ecommerce funnel."
+  schema={[serviceSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Ecommerce Marketing', href: '/services/ecommerce-marketing/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Ecommerce &amp; D2C</div>
+      <h1>Ecommerce growth built around <span class="copper">the full funnel.</span></h1>
+      <p>Shopify-native paid acquisition, SEO, conversion optimization and product launch strategy — built specifically around how ecommerce and D2C brands actually grow.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <DefinitionBlock
+        term="An ecommerce marketing agency"
+        definition="runs the acquisition, retention and conversion systems a D2C or ecommerce brand needs to grow — paid ads, SEO, and conversion optimization built specifically around the ecommerce funnel, not adapted from generic lead-gen playbooks."
+      />
+      <div class="why-grid" style="grid-template-columns:1fr">
+        <div class="why-col why-us" style="border-left:none">
+          <h3>What's included</h3>
+          <ul>
+            <li><span class="tick">✓</span> Shopify and ecommerce platform marketing</li>
+            <li><span class="tick">✓</span> Paid acquisition tuned for ROAS, not clicks</li>
+            <li><span class="tick">✓</span> Product launch marketing</li>
+            <li><span class="tick">✓</span> Conversion rate optimization for product and checkout pages</li>
+            <li><span class="tick">✓</span> Retention and repeat-purchase strategy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Ecommerce Marketing FAQ" heading="Questions about growing an ecommerce or D2C brand." />
+
+  <CtaSection
+    heading="Ready to grow beyond <span class='copper'>your next launch?</span>"
+    sub="Book a strategy call and we'll show you where your current funnel is leaking revenue — no pitch, just a straight read."
+  />
+</BaseLayout>
