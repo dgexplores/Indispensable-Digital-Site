@@ -111,10 +111,10 @@ const jsonLdBlocks = [orgSchema, webSiteSchema, webPageSchema, ...schema];
     <meta name="generator" content={Astro.generator} />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HF33W0NR0"></script>
-    <script>
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-0HF33W0NR0"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-0HF33W0NR0');
     </script>
