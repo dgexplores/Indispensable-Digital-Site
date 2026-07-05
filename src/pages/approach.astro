@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'The Indispensable Digital growth method',
+  description: 'Every engagement moves through the same four-step arc — from sharp strategic thinking to measurable, compounding growth.',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Strategy',
+      text: 'We diagnose the real constraint on growth and design the sequence of moves to win the category.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Story',
+      text: 'We craft the positioning and narrative that makes your brand the obvious, memorable choice.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Growth',
+      text: 'We build the acquisition and content engines that turn the strategy into pipeline and revenue.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Impact',
+      text: 'We measure what matters, compound what works, and make the advantage impossible to unwind.',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Our Approach — Strategy, Story, Growth, Impact | Indispensable Digital"
+  description="A method, not a menu. Every engagement moves through the same disciplined arc — from sharp strategic thinking to measurable, compounding growth."
+  schema={[howToSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Approach', href: '/approach/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">How We Work</div>
+      <h1>A method, <span class="copper">not a menu.</span></h1>
+      <p>Every engagement moves through the same disciplined arc — from sharp thinking to measurable, compounding results.</p>
+    </div>
+  </section>
+
+  <!-- APPROACH STEPS -->
+  <section class="approach pad">
+    <div class="wrap">
+      <div class="steps">
+        <div class="step"><div class="k">01</div><h3>Strategy</h3><p>We diagnose the real constraint on growth and design the sequence of moves to win the category.</p></div>
+        <div class="step"><div class="k">02</div><h3>Story</h3><p>We craft the positioning and narrative that makes your brand the obvious, memorable choice.</p></div>
+        <div class="step"><div class="k">03</div><h3>Growth</h3><p>We build the acquisition and content engines that turn the strategy into pipeline and revenue.</p></div>
+        <div class="step"><div class="k">04</div><h3>Impact</h3><p>We measure what matters, compound what works, and make the advantage impossible to unwind.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="pad">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Indispensable</div>
+        <h2>An agency runs your marketing.<br>We make your brand <span class="copper">indispensable.</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-col why-them">
+          <h3>The Traditional Agency</h3>
+          <ul>
+            <li><span class="cross">✕</span> Sells deliverables and hours</li>
+            <li><span class="cross">✕</span> Optimizes campaigns in isolation</li>
+            <li><span class="cross">✕</span> Measures clicks and impressions</li>
+            <li><span class="cross">✕</span> Reacts to briefs</li>
+            <li><span class="cross">✕</span> Interchangeable with the next vendor</li>
+          </ul>
+        </div>
+        <div class="why-col why-us">
+          <h3>Indispensable Digital</h3>
+          <ul>
+            <li><span class="tick">✓</span> Owns commercial outcomes and category position</li>
+            <li><span class="tick">✓</span> Integrates strategy, brand and performance as one system</li>
+            <li><span class="tick">✓</span> Measures pipeline, revenue and market share</li>
+            <li><span class="tick">✓</span> Sets the strategic agenda at the board level</li>
+            <li><span class="tick">✓</span> Becomes the partner you can't operate without</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

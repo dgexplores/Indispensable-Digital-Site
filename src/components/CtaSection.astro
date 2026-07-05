@@ -1,0 +1,20 @@
+---
+interface Props {
+  heading?: string;
+  sub?: string;
+}
+const {
+  heading = "Your category has a leader.<br>It might as well be <span class='copper'>you.</span>",
+  sub = "Book a strategy call. We'll pressure-test your growth thesis and show you where the real leverage is — no pitch, just clarity.",
+} = Astro.props;
+---
+
+<section class="cta">
+  <div class="cta-bg"></div>
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center">Let's Build Something Indispensable</div>
+    <h2 set:html={heading} />
+    <p>{sub}</p>
+    <a href="/contact/#book-call" class="btn btn-primary" style="padding:17px 40px;font-size:1rem">Book a Strategy Call</a>
+  </div>
+</section>

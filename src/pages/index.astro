@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Faq from '../components/Faq.astro';
+import DefinitionBlock from '../components/DefinitionBlock.astro';
+
+const faqs = [
+  {
+    q: 'What does a growth consultancy actually do?',
+    a: "A growth consultancy diagnoses the real constraints on a company's growth, then designs and executes the strategy, brand positioning, and marketing systems needed to remove them — rather than simply running isolated campaigns. Indispensable Digital integrates growth strategy, brand positioning, content, PR, and performance marketing into one system built around a single commercial outcome: making your brand the default choice in its category.",
+  },
+  {
+    q: 'How is Indispensable Digital different from a traditional marketing agency?',
+    a: 'Traditional agencies typically sell deliverables and hours, and optimize campaigns in isolation. Indispensable Digital operates as an integrated growth partner — every engagement is led by senior strategists, strategy and execution are handled as one system, and success is measured on pipeline, revenue, and market position rather than clicks or impressions.',
+  },
+  {
+    q: 'Who is Indispensable Digital a good fit for?',
+    a: 'We work best with founders and leadership teams who are ready to commit to a category-leadership strategy rather than one-off campaigns — typically early-to-growth-stage brands and creators who need senior strategic direction alongside hands-on execution.',
+  },
+  {
+    q: 'What services are included in an engagement?',
+    a: 'Depending on the engagement, we bring together growth strategy, brand positioning, PR and communications, content strategy, YouTube growth, performance marketing, customer acquisition systems, and marketing intelligence — integrated as a single system rather than sold as separate line items.',
+  },
+  {
+    q: 'How do I get started?',
+    a: "Book a strategy call. It's a direct conversation with a senior strategist — not a sales pitch — to pressure-test your current growth thesis and identify where the real leverage is.",
+  },
+  {
+    q: "What's the difference between a growth consultancy and a marketing agency in India?",
+    a: "Most marketing agencies in India are structured around executing campaigns you've already decided on — ads, content calendars, social posting. A growth consultancy like Indispensable Digital starts a step earlier: diagnosing the actual constraint on growth, setting the category position, and then building the marketing systems to execute that strategy, with one team accountable for the whole outcome.",
+  },
+  {
+    q: 'How do I choose the right brand positioning partner?',
+    a: 'Look for a partner who starts with your commercial strategy, not a moodboard — positioning that isn\'t grounded in how you actually win the category rarely survives contact with the market. Also check whether senior strategists stay involved through execution, or whether the work gets handed off to junior teams after the pitch.',
+  },
+  {
+    q: 'Can a growth consultancy replace my in-house marketing team?',
+    a: "It depends on your stage. Early on, a growth consultancy often acts as the strategic and executional core before an in-house team exists. For companies with an existing team, we typically operate as a senior strategic layer — setting direction and structure that an in-house team then runs day to day.",
+  },
+];
+---
+
+<BaseLayout
+  title="Growth Consultancy & Brand Strategy | Indispensable Digital"
+  description="Indispensable Digital is a growth consultancy for founders who intend to lead their category — integrating growth strategy, brand positioning, content, PR and performance marketing as one system."
+>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="wrap">
+      <div class="eyebrow">Growth Consultancy · Strategy · Story · Growth · Impact</div>
+      <h1>Built to Make Brands <span class="copper">Indispensable.</span></h1>
+      <p class="hero-sub">We don't just run campaigns. We build brands that lead their category, compound their advantage, and become impossible to replace. A consultancy for founders who intend to win.</p>
+      <div class="hero-btns">
+        <a href="/contact/#book-call" class="btn btn-primary">Book a Strategy Call</a>
+        <a href="/work/" class="btn btn-ghost">See Our Impact</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num"><span class="copper">100%</span></div><div class="lbl">Senior strategists on every engagement</div></div>
+        <div class="stat"><div class="num">1:1</div><div class="lbl">Direct access to your strategist</div></div>
+        <div class="stat"><div class="num">4-in-1</div><div class="lbl">Strategy · Brand · Content · Performance</div></div>
+        <div class="stat"><div class="num">Day 1</div><div class="lbl">Focused on outcomes, not hours</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto pad">
+    <div class="wrap">
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>We don't compete for attention.<br>We build brands that <span class="copper">own it</span> — brands that lead, last, and become indispensable.</blockquote>
+      <cite>— The Indispensable Standard</cite>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="pad" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Eight disciplines. One outcome: <span class="copper">market leadership.</span></h2>
+        <p>Most agencies sell activity. We engineer advantage — integrating strategy, brand, and performance into a single system built to make you the default choice in your category.</p>
+      </div>
+      <DefinitionBlock
+        term="Indispensable Digital is a growth consultancy"
+        definition="that integrates growth strategy, brand positioning, PR and communications, content strategy, and performance marketing into a single system — built to make founder-led brands the default choice in their category, rather than just another campaign."
+      />
+      <ServicesGrid />
+      <div style="margin-top:40px">
+        <a href="/services/" class="btn btn-ghost">Explore All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="pad" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Indispensable</div>
+        <h2>An agency runs your marketing.<br>We make your brand <span class="copper">indispensable.</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-col why-them">
+          <h3>The Traditional Agency</h3>
+          <ul>
+            <li><span class="cross">✕</span> Sells deliverables and hours</li>
+            <li><span class="cross">✕</span> Optimizes campaigns in isolation</li>
+            <li><span class="cross">✕</span> Measures clicks and impressions</li>
+            <li><span class="cross">✕</span> Reacts to briefs</li>
+            <li><span class="cross">✕</span> Interchangeable with the next vendor</li>
+          </ul>
+        </div>
+        <div class="why-col why-us">
+          <h3>Indispensable Digital</h3>
+          <ul>
+            <li><span class="tick">✓</span> Owns commercial outcomes and category position</li>
+            <li><span class="tick">✓</span> Integrates strategy, brand and performance as one system</li>
+            <li><span class="tick">✓</span> Measures pipeline, revenue and market share</li>
+            <li><span class="tick">✓</span> Sets the strategic agenda at the board level</li>
+            <li><span class="tick">✓</span> Becomes the partner you can't operate without</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Common Questions" heading="Everything founders ask before working with us." />
+
+  <CtaSection />
+</BaseLayout>

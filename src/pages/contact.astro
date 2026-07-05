@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Faq from '../components/Faq.astro';
+import BookingForm from '../components/BookingForm.astro';
+
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Indispensable Digital',
+  about: { '@id': 'https://www.indispensabledigital.com/#organization' },
+};
+
+const faqs = [
+  {
+    q: 'What happens on a strategy call?',
+    a: "A forty-five minute, no-pitch conversation. We look at your current positioning, funnel, and market, and tell you plainly where the real growth leverage is — whether or not we end up working together.",
+  },
+  {
+    q: 'How quickly do you respond to inquiries?',
+    a: 'We respond to every serious inquiry within one business day.',
+  },
+  {
+    q: 'Do you work with businesses outside India?',
+    a: 'Yes. Indispensable Digital is based in New Delhi, India, and works with founders and brands internationally as a remote growth partner.',
+  },
+  {
+    q: 'What should I prepare before the call?',
+    a: "Nothing formal — just be ready to talk plainly about where your brand is today, what's working, and what isn't. We'll do the diagnostic thinking on the call itself.",
+  },
+  {
+    q: 'Do I need to sign anything to book the call?',
+    a: "No. The strategy call is a no-commitment conversation — any engagement afterward is discussed and agreed separately, on its own terms.",
+  },
+  {
+    q: "What if we're not a good fit?",
+    a: "We'll tell you plainly. A poor fit helps neither side, so if we don't think we're the right partner for your stage or situation, we'll say so directly instead of trying to force an engagement.",
+  },
+];
+---
+
+<BaseLayout
+  title="Contact — Book a Strategy Call | Indispensable Digital"
+  description="Book a strategy call with Indispensable Digital. We'll pressure-test your growth thesis and show you where the real leverage is — no pitch, just clarity."
+  schema={[contactPageSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Contact', href: '/contact/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Let's Build Something Indispensable</div>
+      <h1>Your category has a leader.<br>It might as well be <span class="copper">you.</span></h1>
+      <p>Book a strategy call. We'll pressure-test your growth thesis and show you where the real leverage is — no pitch, just clarity.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="section-head" style="margin-bottom:36px">
+            <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">What happens on the call</h2>
+            <p>Forty-five minutes, no slides, no pitch. We look at your positioning, your funnel and your market — and tell you plainly where the leverage is, whether or not we end up working together.</p>
+          </div>
+          <div class="why-grid" style="grid-template-columns:1fr">
+            <div class="why-col why-us" style="border-left:none">
+              <h3>You'll leave with</h3>
+              <ul>
+                <li><span class="tick">✓</span> A pressure-tested read on your current growth thesis</li>
+                <li><span class="tick">✓</span> The one or two constraints actually holding growth back</li>
+                <li><span class="tick">✓</span> A recommended sequence of moves — with or without us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <p class="sub">We respond to every serious inquiry within one business day.</p>
+          <div class="contact-line">
+            <span class="lbl">Email</span>
+            <a href="mailto:contact@indispensabledigital.com">contact@indispensabledigital.com</a>
+          </div>
+          <div class="contact-line">
+            <span class="lbl">Phone</span>
+            <a href="tel:+917000123171">+91-7000123171</a>
+          </div>
+          <div class="contact-line">
+            <span class="lbl">LinkedIn</span>
+            <a href="https://www.linkedin.com/company/indispensabledigital/" target="_blank" rel="noopener">Indispensable Digital</a>
+          </div>
+          <div class="contact-line">
+            <span class="lbl">Location</span>
+            <span class="val">New Delhi, India</span>
+          </div>
+          <div style="margin-top:30px">
+            <a href="#book-call" class="btn btn-primary" style="width:100%;text-align:center">Book a Strategy Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <BookingForm />
+
+  <Faq items={faqs} eyebrow="Before You Book" heading="What to expect when you reach out." />
+</BaseLayout>

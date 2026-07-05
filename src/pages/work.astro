@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Faq from '../components/Faq.astro';
+
+const faqs = [
+  {
+    q: 'What are the different ways to work with Indispensable Digital?',
+    a: 'We offer three core engagement types: a Growth Diagnostic (a deep audit of your positioning, funnel, and market), a Brand & Positioning Sprint (defining your category position and narrative), and a Fractional Growth Partner engagement (ongoing senior partnership across strategy and execution).',
+  },
+  {
+    q: 'Is this a short-term project or an ongoing partnership?',
+    a: 'Both are available. The Growth Diagnostic and Brand & Positioning Sprint are focused, time-boxed engagements, while the Fractional Growth Partner model is an ongoing, month-over-month partnership for teams that want continuous senior involvement.',
+  },
+  {
+    q: 'How is success measured?',
+    a: 'We measure engagements against your commercial outcomes — pipeline, revenue, and market share — not vanity metrics like impressions or hours billed.',
+  },
+  {
+    q: 'Do you work hands-on or just advise?',
+    a: "Both. Every engagement is senior-led and hands-on — we stay involved from strategy through execution rather than handing off a deck and disappearing.",
+  },
+  {
+    q: 'What is included in a Growth Diagnostic engagement?',
+    a: "A Growth Diagnostic audits your current positioning, funnel, and market to identify exactly where growth is being left on the table. You come out with a clear, prioritized read on the one or two constraints actually limiting growth — and a recommended sequence of moves to fix them.",
+  },
+  {
+    q: 'How long does a Brand & Positioning Sprint take?',
+    a: "It's a focused, time-boxed sprint rather than an ongoing retainer. The exact timeline depends on the scope of your brand and market, and is agreed upfront before the engagement starts — not left open-ended.",
+  },
+];
+---
+
+<BaseLayout
+  title="Ways to Work With Us — Engagements Built for Momentum | Indispensable Digital"
+  description="Growth diagnostics, brand & positioning sprints, and fractional growth partnerships. Senior-led, integrated engagements measured on your outcomes — never on hours billed."
+>
+  <Breadcrumbs items={[{ label: 'Work', href: '/work/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Our Commitment</div>
+      <h1>Built on <span class="copper">uncompromising standards.</span></h1>
+      <p>We're a deliberately boutique consultancy — which means senior focus, zero bureaucracy, and a real stake in making your brand win. Here's what every engagement stands on.</p>
+    </div>
+  </section>
+
+  <section class="proof pad" style="padding-top:40px">
+    <div class="wrap">
+      <div class="metrics">
+        <div class="metric"><div class="big">Senior-Led</div><div class="desc">Every engagement is run by senior strategists who stay hands-on from strategy to execution.</div></div>
+        <div class="metric"><div class="big">Integrated</div><div class="desc">Strategy, brand, content and performance operate as one system — not disconnected silos.</div></div>
+        <div class="metric"><div class="big">Aligned</div><div class="desc">We measure ourselves on your growth and outcomes, never on hours billed.</div></div>
+      </div>
+      <div class="section-head" style="margin:30px 0 40px">
+        <div class="eyebrow">Ways To Work With Us</div>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Engagements built for momentum.</h2>
+      </div>
+      <div class="cases">
+        <div class="case"><div class="img"><span>01</span></div><div class="body"><div class="tag">Engagement 01</div><h3>Growth Diagnostic</h3><p>A deep audit of your positioning, funnel and market to surface exactly where your real growth leverage is.</p></div></div>
+        <div class="case"><div class="img"><span>02</span></div><div class="body"><div class="tag">Engagement 02</div><h3>Brand &amp; Positioning Sprint</h3><p>We define the sharp, defensible position and narrative that make your brand the obvious choice in its category.</p></div></div>
+        <div class="case"><div class="img"><span>03</span></div><div class="body"><div class="tag">Engagement 03</div><h3>Fractional Growth Partner</h3><p>Ongoing senior partnership — we own strategy and execution alongside your team, month over month.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Engagements FAQ" heading="How our engagements actually work." />
+
+  <CtaSection
+    heading="Momentum starts with <span class='copper'>one conversation.</span>"
+    sub="Tell us where you are and where you intend to be. We'll recommend the engagement that gets you there fastest."
+  />
+</BaseLayout>

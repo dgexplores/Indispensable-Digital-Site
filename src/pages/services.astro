@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Faq from '../components/Faq.astro';
+import DefinitionBlock from '../components/DefinitionBlock.astro';
+
+const serviceNames = [
+  'Growth Strategy',
+  'Brand Positioning',
+  'PR & Communications',
+  'Content Strategy',
+  'YouTube Growth',
+  'Performance Marketing',
+  'Customer Acquisition',
+  'Marketing Intelligence',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Growth Marketing Consulting',
+  provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  areaServed: 'Worldwide',
+  description:
+    'Eight integrated disciplines delivered as one system: growth strategy, brand positioning, PR and communications, content strategy, YouTube growth, performance marketing, customer acquisition, and marketing intelligence.',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Indispensable Digital Services',
+    itemListElement: serviceNames.map((name, i) => ({
+      '@type': 'Offer',
+      position: i + 1,
+      itemOffered: {
+        '@type': 'Service',
+        name,
+        provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
+      },
+    })),
+  },
+};
+
+const faqs = [
+  {
+    q: 'Do I need all eight services, or can I start with one?',
+    a: "Most engagements start with the constraint that's actually limiting growth — often positioning or growth strategy — and expand from there. The services are designed to integrate, but they don't have to be purchased as a single bundle.",
+  },
+  {
+    q: "What's the difference between growth strategy and brand positioning?",
+    a: 'Growth strategy is the commercial roadmap — where to play and how to win. Brand positioning is the narrative and market position that makes that strategy land with customers. We treat them as connected disciplines, not separate ones.',
+  },
+  {
+    q: 'Do you run paid ads as well as brand and content work?',
+    a: 'Yes. Performance marketing and customer acquisition sit alongside brand, content, and PR in our model, so paid acquisition is built on a coherent brand position rather than running independently of it.',
+  },
+  {
+    q: "Which service should I choose if I'm just starting out?",
+    a: 'For an early-stage brand, we usually recommend starting with growth strategy and brand positioning — getting the category position and roadmap right before scaling content or paid acquisition on top of it. A Growth Diagnostic engagement is the fastest way to find out exactly where to start.',
+  },
+  {
+    q: 'Do you offer YouTube growth services for personal brands, or only companies?',
+    a: "Both. YouTube growth is one of our eight disciplines and applies equally to a founder building a personal brand or a company building an owned audience channel — the strategy differs, but the underlying system doesn't.",
+  },
+];
+---
+
+<BaseLayout
+  title="Services — Growth Strategy, Brand Positioning & Performance Marketing | Indispensable Digital"
+  description="Eight integrated disciplines, one outcome: market leadership. Growth strategy, brand positioning, PR, content, YouTube growth, performance marketing, acquisition and intelligence."
+  schema={[serviceSchema]}
+>
+  <Breadcrumbs items={[{ label: 'Services', href: '/services/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">What We Do</div>
+      <h1>Eight disciplines. One outcome: <span class="copper">market leadership.</span></h1>
+      <p>Most agencies sell activity. We engineer advantage — integrating strategy, brand, and performance into a single system built to make you the default choice in your category.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <DefinitionBlock
+        term="These eight services"
+        definition="— growth strategy, brand positioning, PR and communications, content strategy, YouTube growth, performance marketing, customer acquisition, and marketing intelligence — are delivered as one integrated system, not separate line items, so every discipline reinforces the same category position."
+      />
+      <ServicesGrid />
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto pad">
+    <div class="wrap">
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>We don't compete for attention.<br>We build brands that <span class="copper">own it</span> — brands that lead, last, and become indispensable.</blockquote>
+      <cite>— The Indispensable Standard</cite>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="Services FAQ" heading="Questions about how our services work." />
+
+  <CtaSection
+    heading="Not sure where to start?<br>Start with <span class='copper'>clarity.</span>"
+    sub="Book a strategy call and we'll show you which of these disciplines will move your growth the most — no pitch, just a straight answer."
+  />
+</BaseLayout>

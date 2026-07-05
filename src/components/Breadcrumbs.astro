@@ -1,0 +1,54 @@
+---
+interface Crumb {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const site = 'https://www.indispensabledigital.com';
+
+const trail: Crumb[] = [{ label: 'Home', href: '/' }, ...items];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: trail.map((crumb, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: crumb.label,
+    item: new URL(crumb.href, site).toString(),
+  })),
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="wrap">
+    <ol>
+      {trail.map((crumb, i) => (
+        <li>
+          {i === trail.length - 1 ? (
+            <span aria-current="page">{crumb.label}</span>
+          ) : (
+            <a href={crumb.href}>{crumb.label}</a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumbs{padding:14px 0;border-bottom:1px solid var(--line-soft);background:var(--navy-2)}
+  .breadcrumbs ol{display:flex;flex-wrap:wrap;list-style:none;gap:0}
+  .breadcrumbs li{display:flex;align-items:center;font-size:.8rem;color:var(--muted)}
+  .breadcrumbs li:not(:last-child)::after{content:"/";margin:0 10px;color:var(--muted-cream);opacity:.4}
+  .breadcrumbs a{color:var(--muted);transition:.2s}
+  .breadcrumbs a:hover{color:var(--copper-2)}
+  .breadcrumbs span[aria-current]{color:var(--copper-2);font-weight:500}
+</style>

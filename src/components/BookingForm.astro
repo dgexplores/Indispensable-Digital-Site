@@ -1,0 +1,119 @@
+---
+/**
+ * Submits via Web3Forms (https://web3forms.com) — a free form-backend service
+ * that emails submissions straight to WEB3FORMS_ACCESS_KEY's owner without needing
+ * any server code. Replace the placeholder below with a real access key generated
+ * for gaurav.gangwar@indispensabledigital.com at https://web3forms.com/.
+ */
+const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
+---
+
+<section class="pad" id="book-call">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:40px">
+      <div class="eyebrow">Book a Strategy Call</div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Tell us about your brand.</h2>
+      <p>Fill this in and it goes straight to our inbox — we'll reply within one business day to schedule your call.</p>
+    </div>
+
+    <form
+      id="booking-form"
+      class="booking-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
+      <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+      <input type="hidden" name="subject" value="New Strategy Call Request — Indispensable Digital" />
+      <input type="hidden" name="from_name" value="Indispensable Digital Website" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@company.com" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" />
+        </div>
+        <div class="form-field">
+          <label for="company">Company / Brand</label>
+          <input type="text" id="company" name="company" placeholder="Your brand name" />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="message">What are you looking to achieve?</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Tell us a bit about your brand and what growth challenge you're facing."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;text-align:center">Send &amp; Book My Call</button>
+
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('booking-form') as HTMLFormElement | null;
+  const status = form?.querySelector('.form-status') as HTMLParagraphElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!status) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        form.reset();
+        status.textContent = "Thanks — we've got your details and will reach out within one business day.";
+        status.classList.add('success');
+        submitBtn.textContent = 'Sent';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      status.textContent = "Something went wrong sending that. Please email us directly at contact@indispensabledigital.com.";
+      status.classList.add('error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send & Book My Call';
+    }
+  });
+</script>
+
+<style>
+  .booking-form{max-width:720px;background:var(--navy-2);border:1px solid var(--line-soft);border-radius:14px;padding:40px;display:flex;flex-direction:column;gap:20px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .form-field{display:flex;flex-direction:column;gap:8px}
+  .form-field label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-2);font-weight:600}
+  .form-field input,.form-field textarea{background:var(--navy-3);border:1px solid var(--line-soft);border-radius:6px;padding:12px 14px;color:var(--cream);font-family:'Inter',sans-serif;font-size:.95rem;transition:.2s;resize:vertical}
+  .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--copper)}
+  .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted-cream);opacity:.5}
+  .form-status{font-size:.9rem;min-height:1.2em;font-weight:400}
+  .form-status.success{color:#7ec89a}
+  .form-status.error{color:#e26666}
+
+  @media(max-width:560px){
+    .booking-form{padding:26px}
+    .form-row{grid-template-columns:1fr}
+  }
+</style>

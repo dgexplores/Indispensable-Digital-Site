@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const lastUpdated = 'July 5, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy | Indispensable Digital"
+  description="How Indispensable Digital collects, uses, and protects your personal information."
+>
+  <Breadcrumbs items={[{ label: 'Privacy Policy', href: '/privacy-policy/' }]} />
+
+  <section class="page-hero" style="padding-bottom:40px">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Legal</div>
+      <h1>Privacy <span class="copper">Policy</span></h1>
+      <p>Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0">
+    <div class="wrap legal-content">
+      <p>Indispensable Digital ("we", "us", "our") respects your privacy. This Privacy Policy explains what information we collect, how we use it, and the choices you have, when you visit our website or engage with us as a client or prospective client.</p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We may collect the following types of information:</p>
+      <ul>
+        <li><strong>Contact details</strong> you provide directly — name, email address, phone number, and company name — when you book a strategy call, fill out a form, or email us.</li>
+        <li><strong>Usage data</strong> collected automatically, such as pages visited, time on site, browser type, and referring URLs, typically through standard web analytics.</li>
+        <li><strong>Communications</strong> you send us, including emails, messages, and call notes related to prospective or ongoing engagements.</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <ul>
+        <li>To respond to inquiries and schedule strategy calls</li>
+        <li>To deliver, manage, and improve our consulting services</li>
+        <li>To send relevant updates, provided you have not opted out</li>
+        <li>To understand how visitors use our site and improve its content</li>
+        <li>To comply with legal obligations</li>
+      </ul>
+
+      <h2>3. Sharing of Information</h2>
+      <p>We do not sell your personal information. We may share information with trusted service providers (such as email or scheduling tools) strictly to operate our business, and only to the extent necessary for them to perform their function. We may also disclose information if required by law.</p>
+
+      <h2>4. Data Retention</h2>
+      <p>We retain personal information only as long as necessary to fulfil the purposes described in this policy, or as required by applicable law.</p>
+
+      <h2>5. Your Rights</h2>
+      <p>You may request access to, correction of, or deletion of your personal information at any time by emailing <a href="mailto:contact@indispensabledigital.com" class="copper">contact@indispensabledigital.com</a>.</p>
+
+      <h2>6. Cookies</h2>
+      <p>Our website may use minimal cookies or similar technologies to support basic site functionality and analytics. You can control cookies through your browser settings.</p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. The "Last updated" date above reflects the most recent revision.</p>
+
+      <h2>8. Contact Us</h2>
+      <p>Questions about this policy can be directed to <a href="mailto:contact@indispensabledigital.com" class="copper">contact@indispensabledigital.com</a> or <a href="tel:+917000123171" class="copper">+91-7000123171</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-content{max-width:800px}
+  .legal-content h2{color:var(--cream);font-size:1.4rem;margin:36px 0 14px}
+  .legal-content h2:first-child{margin-top:0}
+  .legal-content p{color:var(--muted);font-weight:300;margin-bottom:16px;font-size:1rem}
+  .legal-content ul{color:var(--muted);font-weight:300;margin:0 0 16px 22px}
+  .legal-content li{margin-bottom:8px}
+</style>

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Faq from '../components/Faq.astro';
+
+const faqs = [
+  {
+    q: 'Who is Gaurav Gangwar?',
+    a: 'Gaurav Gangwar is the founder of Indispensable Digital, a growth architect who co-founded and scaled his own digital company to profitability within a year before starting this consultancy. He works directly on the strategic thinking behind every engagement rather than delegating it to junior staff.',
+  },
+  {
+    q: 'Why should I trust Indispensable Digital with my brand?',
+    a: "Because the operating philosophy comes from having actually built and scaled a company, not just advised on one — Gaurav learned growth by navigating real algorithm shifts and platform changes firsthand. That operator's instinct, not theory, sits at the core of every engagement.",
+  },
+  {
+    q: 'Does Gaurav work directly on every engagement?',
+    a: 'Yes. Indispensable Digital is a deliberately boutique consultancy that partners with a small number of founders and creators at a time — depth over volume — so the founder stays hands-on rather than handing engagements off to a large account team.',
+  },
+  {
+    q: 'What makes Indispensable Digital different from hiring a full-time CMO?',
+    a: 'A full-time CMO is a single hire with a fixed scope. Indispensable Digital operates as an integrated strategic partner across growth strategy, brand positioning, content, and performance — bringing a full system of disciplines rather than one person\'s bandwidth.',
+  },
+];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Gaurav Gangwar',
+  jobTitle: 'Founder',
+  url: 'https://www.indispensabledigital.com/about/',
+  image: 'https://www.indispensabledigital.com/founder.jpg',
+  worksFor: { '@id': 'https://www.indispensabledigital.com/#organization' },
+  sameAs: ['https://www.linkedin.com/in/gaurav-gangwar-739977223/'],
+  description:
+    "Gaurav Gangwar is a growth architect who helps brands and creators become category leaders through branding, content, and performance marketing. He co-founded and scaled his own digital company to profitability before founding Indispensable Digital.",
+};
+---
+
+<BaseLayout
+  title="About — Gaurav Gangwar, Founder of Indispensable Digital"
+  description="Indispensable Digital is led by Gaurav Gangwar — a growth architect helping brands and creators become category leaders through branding, content, and performance marketing."
+  schema={[personSchema]}
+>
+  <Breadcrumbs items={[{ label: 'About', href: '/about/' }]} />
+
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Who We Are</div>
+      <h1>A growth architect, <span class="copper">not just a marketer.</span></h1>
+      <p>Depth over volume. Always. A deliberately boutique consultancy built by an operator, for founders who intend to win.</p>
+    </div>
+  </section>
+
+  <section class="about pad">
+    <div class="wrap">
+      <div class="about-flex">
+        <div class="founder-card">
+          <div class="founder-photo">
+            <img src="/founder.jpg" alt="Gaurav Gangwar, Founder of Indispensable Digital" onerror="this.style.display='none'" />
+            <div class="founder-cap"><b>Gaurav Gangwar</b><span>Founder</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow">The Founder</div>
+          <h2>Built from the inside out.</h2>
+          <p>Indispensable Digital is led by <strong style="color:var(--ink)">Gaurav Gangwar</strong> — a growth architect who helps brands and creators become category leaders through branding, content, and performance marketing.</p>
+          <p>Gaurav's path is that of a builder. He learned the craft from the inside, then co-founded and scaled his own digital company to profitability within a year — navigating every algorithm shift and platform change by doing the one thing that actually moves growth: figuring it out. That operator's instinct now sits at the core of every engagement.</p>
+          <p>Today he channels that experience into a focused consultancy — pairing strategic rigor with hands-on execution, and partnering with a deliberately small number of ambitious founders and creators at a time. Depth over volume. Always.</p>
+          <div class="sig">— Gaurav Gangwar, Founder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto pad">
+    <div class="wrap">
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>We don't compete for attention.<br>We build brands that <span class="copper">own it</span> — brands that lead, last, and become indispensable.</blockquote>
+      <cite>— The Indispensable Standard</cite>
+    </div>
+  </section>
+
+  <Faq items={faqs} eyebrow="About the Founder" heading="What people ask about Gaurav and the consultancy." />
+
+  <CtaSection />
+</BaseLayout>

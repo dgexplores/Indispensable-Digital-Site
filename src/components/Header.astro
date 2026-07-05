@@ -1,0 +1,49 @@
+---
+const navItems = [
+  { href: '/services/', label: 'Services' },
+  { href: '/approach/', label: 'Approach' },
+  { href: '/work/', label: 'Work' },
+  { href: '/about/', label: 'About' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') + '/';
+const isActive = (href: string) => currentPath === href;
+---
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="logo" href="/">
+        <span class="logo-mark"><span class="lm-l">I</span><span class="lm-r">D</span></span>
+        INDISPENSABLE <span class="copper" style="font-weight:400;letter-spacing:.15em;font-size:.7rem">DIGITAL</span>
+      </a>
+      <div class="nav-links">
+        {navItems.map((item) => (
+          <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+        ))}
+        <a href="/contact/#book-call" class="btn btn-primary nav-cta">Book a Strategy Call</a>
+      </div>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">&#9776;</button>
+    </nav>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    {navItems.map((item) => (
+      <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+    ))}
+    <a href="/contact/#book-call">Book a Strategy Call</a>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (header) header.style.boxShadow = window.scrollY > 20 ? '0 8px 30px rgba(0,0,0,.35)' : 'none';
+  });
+
+  const menuBtn = document.querySelector('.menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  menuBtn?.addEventListener('click', () => {
+    const open = mobileNav?.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(!!open));
+  });
+</script>
