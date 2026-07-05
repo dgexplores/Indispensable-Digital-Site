@@ -1,4 +1,38 @@
+# Indispensable Digital — robots.txt
+# https://www.indispensabledigital.com
+
+# Default: allow all crawlers full access to the site
 User-agent: *
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI answer engines / LLM crawlers — explicitly allowed for AEO
+# (site also publishes /llms.txt for these crawlers)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://www.indispensabledigital.com/sitemap-index.xml
