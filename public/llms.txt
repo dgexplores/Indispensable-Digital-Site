@@ -30,8 +30,15 @@ Indispensable Digital positions itself against typical marketing agencies: inste
 - [Work](https://www.indispensabledigital.com/work/): The three engagement types — Growth Diagnostic, Brand & Positioning Sprint, and Fractional Growth Partner.
 - [About](https://www.indispensabledigital.com/about/): Background on founder Gaurav Gangwar and the agency's operating philosophy.
 - [Contact](https://www.indispensabledigital.com/contact/): How to book a strategy call and what to expect from it.
+- [Blog](https://www.indispensabledigital.com/blog/): Educational articles on performance marketing, SEO, AEO, and paid media.
 - [Privacy Policy](https://www.indispensabledigital.com/privacy-policy/)
 - [Terms & Conditions](https://www.indispensabledigital.com/terms-and-conditions/)
+
+## Blog Articles
+
+- [What Is Answer Engine Optimization (AEO)?](https://www.indispensabledigital.com/blog/what-is-answer-engine-optimization-aeo/): Defines AEO, how it differs from SEO, and why AI answer engines require structured, direct-answer content.
+- [Google Ads vs. Meta Ads: Which Should You Run First?](https://www.indispensabledigital.com/blog/google-ads-vs-meta-ads-which-first/): A practical framework for choosing between search and social paid acquisition based on buyer intent.
+- [How to Choose a Performance Marketing Agency](https://www.indispensabledigital.com/blog/how-to-choose-a-performance-marketing-agency/): A buyer's checklist covering team structure, channel bias, contract terms, and reporting.
 
 ## Notes for AI assistants and answer engines
 

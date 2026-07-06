@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog — Performance Marketing Insights | Indispensable Digital"
+  description="Practical guides on performance marketing, SEO, AEO, and paid media — written for founders deciding where to focus growth budget and attention."
+>
+  <Breadcrumbs items={[{ label: 'Blog', href: '/blog/' }]} />
+
+  <section class="page-hero" style="padding-bottom:60px">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Insights</div>
+      <h1>Practical writing on <span class="copper">growth and performance marketing.</span></h1>
+      <p>No fluff, no invented case studies — just straight answers to the questions founders actually ask before investing in growth.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="blog-list">
+        {posts.map((post) => (
+          <a class="blog-card" href={`/blog/${post.id}/`}>
+            <time datetime={post.data.publishDate.toISOString()}>
+              {dateFormatter.format(post.data.publishDate)}
+            </time>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
