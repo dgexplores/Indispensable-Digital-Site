@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaSection from '../components/CtaSection.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Faq from '../components/Faq.astro';
+import VisualStory from '../components/VisualStory.astro';
 
 const faqs = [
   {
@@ -15,26 +16,26 @@ const faqs = [
   },
   {
     q: 'How is success measured?',
-    a: 'We measure engagements against your commercial outcomes — pipeline, revenue, and market share — not vanity metrics like impressions or hours billed.',
+    a: 'We measure engagements against your commercial outcomes - pipeline, revenue, and market share - not vanity metrics like impressions or hours billed.',
   },
   {
     q: 'Do you work hands-on or just advise?',
-    a: "Both. Every engagement is senior-led and hands-on — we stay involved from strategy through execution rather than handing off a deck and disappearing.",
+    a: "Both. Every engagement is senior-led and hands-on - we stay involved from strategy through execution rather than handing off a deck and disappearing.",
   },
   {
     q: 'What is included in a Growth Diagnostic engagement?',
-    a: "A Growth Diagnostic audits your current positioning, funnel, and market to identify exactly where growth is being left on the table. You come out with a clear, prioritized read on the one or two constraints actually limiting growth — and a recommended sequence of moves to fix them.",
+    a: "A Growth Diagnostic audits your current positioning, funnel, and market to identify exactly where growth is being left on the table. You come out with a clear, prioritized read on the one or two constraints actually limiting growth - and a recommended sequence of moves to fix them.",
   },
   {
     q: 'How long does a Brand & Positioning Sprint take?',
-    a: "It's a focused, time-boxed sprint rather than an ongoing retainer. The exact timeline depends on the scope of your brand and market, and is agreed upfront before the engagement starts — not left open-ended.",
+    a: "It's a focused, time-boxed sprint rather than an ongoing retainer. The exact timeline depends on the scope of your brand and market, and is agreed upfront before the engagement starts - not left open-ended.",
   },
 ];
 ---
 
 <BaseLayout
   title="Growth Consulting Engagements | Indispensable Digital"
-  description="Growth diagnostics, brand positioning sprints, and fractional growth partner engagements — senior-led, integrated, measured on outcomes, not hours billed."
+  description="Growth diagnostics, brand positioning sprints, and fractional growth partner engagements - senior-led, integrated, measured on outcomes, not hours billed."
 >
   <Breadcrumbs items={[{ label: 'Work', href: '/work/' }]} />
 
@@ -43,15 +44,31 @@ const faqs = [
     <div class="wrap">
       <div class="eyebrow">Our Commitment</div>
       <h1>Built on <span class="copper">uncompromising standards.</span></h1>
-      <p>We're a deliberately boutique consultancy — which means senior focus, zero bureaucracy, and a real stake in making your brand win. Here's what every engagement stands on.</p>
+      <p>We're a deliberately boutique consultancy - which means senior focus, zero bureaucracy, and a real stake in making your brand win. Here's what every engagement stands on.</p>
     </div>
   </section>
+
+  <VisualStory
+    tone="dark"
+    image="/images/visual-stories/senior-collaboration.jpg"
+    alt="A senior team physically connecting separate paths into one shared direction"
+    heading="Shared context creates <span class='signal-type'>better decisions.</span>"
+    body="We work close to the problem and close to your team. That keeps strategy, execution, and learning connected throughout the engagement."
+    points={[
+      'Direct access to senior strategists',
+      'Decisions made with the full picture',
+      'No handoff between strategy and delivery',
+      'Progress visible to both teams',
+    ]}
+    caption="An engagement model designed around continuity, ownership, and shared momentum."
+    motion="float"
+  />
 
   <section class="proof pad" style="padding-top:40px">
     <div class="wrap">
       <div class="metrics">
         <div class="metric"><div class="big">Senior-Led</div><div class="desc">Every engagement is run by senior strategists who stay hands-on from strategy to execution.</div></div>
-        <div class="metric"><div class="big">Integrated</div><div class="desc">Strategy, brand, content and performance operate as one system — not disconnected silos.</div></div>
+        <div class="metric"><div class="big">Integrated</div><div class="desc">Strategy, brand, content and performance operate as one system - not disconnected silos.</div></div>
         <div class="metric"><div class="big">Aligned</div><div class="desc">We measure ourselves on your growth and outcomes, never on hours billed.</div></div>
       </div>
       <div class="section-head" style="margin:30px 0 40px">
@@ -61,7 +78,7 @@ const faqs = [
       <div class="cases">
         <div class="case"><div class="img"><span>01</span></div><div class="body"><div class="tag">Engagement 01</div><h3>Growth Diagnostic</h3><p>A deep audit of your positioning, funnel and market to surface exactly where your real growth leverage is.</p></div></div>
         <div class="case"><div class="img"><span>02</span></div><div class="body"><div class="tag">Engagement 02</div><h3>Brand &amp; Positioning Sprint</h3><p>We define the sharp, defensible position and narrative that make your brand the obvious choice in its category.</p></div></div>
-        <div class="case"><div class="img"><span>03</span></div><div class="body"><div class="tag">Engagement 03</div><h3>Fractional Growth Partner</h3><p>Ongoing senior partnership — we own strategy and execution alongside your team, month over month.</p></div></div>
+        <div class="case"><div class="img"><span>03</span></div><div class="body"><div class="tag">Engagement 03</div><h3>Fractional Growth Partner</h3><p>Ongoing senior partnership - we own strategy and execution alongside your team, month over month.</p></div></div>
       </div>
     </div>
   </section>

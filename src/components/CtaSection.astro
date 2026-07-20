@@ -5,16 +5,21 @@ interface Props {
 }
 const {
   heading = "Your category has a leader.<br>It might as well be <span class='copper'>you.</span>",
-  sub = "Book a strategy call. We'll pressure-test your growth thesis and show you where the real leverage is — no pitch, just clarity.",
+  sub = "Book a strategy call. We'll pressure-test your growth thesis and show you where the real leverage is - no pitch, just clarity.",
 } = Astro.props;
 ---
 
 <section class="cta">
-  <div class="cta-bg"></div>
   <div class="wrap">
-    <div class="eyebrow" style="text-align:center">Let's Build Something Indispensable</div>
-    <h2 set:html={heading} />
-    <p>{sub}</p>
-    <a href="/contact/#book-call" class="btn btn-primary" style="padding:17px 40px;font-size:1rem">Book a Strategy Call</a>
+    <div class="cta-grid">
+      <div class="cta-copy">
+        <div class="eyebrow">The next move</div>
+        <h2 set:html={heading} />
+        <p>{sub}</p>
+      </div>
+      <a href="/contact/#book-call" class="cta-action" aria-label="Book a strategy call">
+        <span>Book a strategy call</span><span class="cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
   </div>
 </section>

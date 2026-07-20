@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DefinitionBlock from '../../components/DefinitionBlock.astro';
 import Faq from '../../components/Faq.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import VisualStory from '../../components/VisualStory.astro';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -12,36 +13,36 @@ const serviceSchema = {
   provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
   areaServed: 'Worldwide',
   description:
-    'Technical and on-page SEO combined with Answer Engine Optimization — structured data, FAQ schema, and content built to rank in Google and get cited by AI answer engines like ChatGPT, Claude, and Perplexity.',
+    'Technical and on-page SEO combined with Answer Engine Optimization - structured data, FAQ schema, and content built to rank in Google and get cited by AI answer engines like ChatGPT, Claude, and Perplexity.',
 };
 
 const faqs = [
   {
     q: 'What is Answer Engine Optimization (AEO)?',
-    a: "AEO is the practice of structuring content — direct-answer paragraphs, FAQ and HowTo schema, clean entity data — so AI answer engines like ChatGPT, Claude, and Perplexity can accurately find, understand, and cite your brand when someone asks a relevant question. It runs alongside traditional SEO rather than replacing it.",
+    a: "AEO is the practice of structuring content - direct-answer paragraphs, FAQ and HowTo schema, clean entity data - so AI answer engines like ChatGPT, Claude, and Perplexity can accurately find, understand, and cite your brand when someone asks a relevant question. It runs alongside traditional SEO rather than replacing it.",
   },
   {
     q: "How is AEO different from traditional SEO?",
-    a: "Traditional SEO optimizes for ranking in a list of blue links. AEO optimizes for being the direct answer or citation inside an AI-generated response — which depends more on structured data, clear definitions, and machine-readable content (like schema markup and llms.txt) than on backlinks alone.",
+    a: "Traditional SEO optimizes for ranking in a list of blue links. AEO optimizes for being the direct answer or citation inside an AI-generated response - which depends more on structured data, clear definitions, and machine-readable content (like schema markup and llms.txt) than on backlinks alone.",
   },
   {
     q: "What's the difference between technical SEO and on-page SEO?",
-    a: "Technical SEO is the foundation — crawlability, indexing, site speed, structured data, and Core Web Vitals — that determines whether search engines can properly access and understand your site. On-page SEO is the content and structure layer built on top: titles, headings, internal linking, and content aligned to search intent. You need both; technical issues cap how much on-page work can achieve.",
+    a: "Technical SEO is the foundation - crawlability, indexing, site speed, structured data, and Core Web Vitals - that determines whether search engines can properly access and understand your site. On-page SEO is the content and structure layer built on top: titles, headings, internal linking, and content aligned to search intent. You need both; technical issues cap how much on-page work can achieve.",
   },
   {
     q: 'Do you offer ecommerce SEO specifically?',
-    a: 'Yes. Ecommerce sites have SEO challenges that content sites don\'t — faceted navigation, duplicate product content, category page structure, and Shopify or platform-specific constraints — and we structure the technical and content work around those specifics.',
+    a: 'Yes. Ecommerce sites have SEO challenges that content sites don\'t - faceted navigation, duplicate product content, category page structure, and Shopify or platform-specific constraints - and we structure the technical and content work around those specifics.',
   },
   {
     q: 'How long does it take to see results from SEO and AEO?',
-    a: "Technical fixes can show measurable crawl and indexing improvements within weeks, and AI answer engines can start citing well-structured content on a similar timeline. Ranking and traffic growth from content and authority-building work typically compounds over several months — both are durable assets, not a campaign with a fixed end date.",
+    a: "Technical fixes can show measurable crawl and indexing improvements within weeks, and AI answer engines can start citing well-structured content on a similar timeline. Ranking and traffic growth from content and authority-building work typically compounds over several months - both are durable assets, not a campaign with a fixed end date.",
   },
 ];
 ---
 
 <BaseLayout
   title="AEO & SEO Services | Indispensable Digital"
-  description="Technical SEO and Answer Engine Optimization — structured data and content built to rank in Google and get cited by AI answer engines like ChatGPT and Claude."
+  description="Technical SEO and Answer Engine Optimization - structured data and content built to rank in Google and get cited by AI answer engines like ChatGPT and Claude."
   schema={[serviceSchema]}
 >
   <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'AEO & SEO', href: '/services/seo/' }]} />
@@ -50,8 +51,8 @@ const faqs = [
     <div class="hero-bg"></div>
     <div class="wrap">
       <div class="eyebrow">Organic Growth</div>
-      <h1>Built for search engines — <span class="copper">and AI answer engines.</span></h1>
-      <p>Technical and on-page SEO, paired with Answer Engine Optimization — so your brand ranks in Google and gets cited when someone asks ChatGPT, Claude, or Perplexity a relevant question.</p>
+      <h1>Built for search engines - <span class="copper">and AI answer engines.</span></h1>
+      <p>Technical and on-page SEO, paired with Answer Engine Optimization - so your brand ranks in Google and gets cited when someone asks ChatGPT, Claude, or Perplexity a relevant question.</p>
     </div>
   </section>
 
@@ -59,7 +60,7 @@ const faqs = [
     <div class="wrap">
       <DefinitionBlock
         term="Answer Engine Optimization (AEO)"
-        definition="is the practice of structuring content — direct-answer paragraphs, FAQ and HowTo schema, and clear entity data — so AI answer engines can accurately find, understand, and cite your brand, alongside the technical and on-page SEO work that earns rankings in Google."
+        definition="is the practice of structuring content - direct-answer paragraphs, FAQ and HowTo schema, and clear entity data - so AI answer engines can accurately find, understand, and cite your brand, alongside the technical and on-page SEO work that earns rankings in Google."
       />
       <div class="section-head" style="margin:48px 0 32px">
         <div class="eyebrow">What's Included</div>
@@ -68,10 +69,10 @@ const faqs = [
       <div class="why-grid" style="grid-template-columns:1fr">
         <div class="why-col why-us" style="border-left:none">
           <ul>
-            <li><span class="tick">✓</span> Technical SEO audit — crawlability, indexing, Core Web Vitals</li>
-            <li><span class="tick">✓</span> On-page SEO — titles, structure, internal linking</li>
-            <li><span class="tick">✓</span> Structured data and schema markup — FAQ, HowTo, Organization</li>
-            <li><span class="tick">✓</span> AEO content structure — direct-answer blocks AI engines can cite</li>
+            <li><span class="tick">✓</span> Technical SEO audit - crawlability, indexing, Core Web Vitals</li>
+            <li><span class="tick">✓</span> On-page SEO - titles, structure, internal linking</li>
+            <li><span class="tick">✓</span> Structured data and schema markup - FAQ, HowTo, Organization</li>
+            <li><span class="tick">✓</span> AEO content structure - direct-answer blocks AI engines can cite</li>
             <li><span class="tick">✓</span> llms.txt and AI-crawler configuration</li>
             <li><span class="tick">✓</span> Content strategy aligned to real search intent</li>
             <li><span class="tick">✓</span> Ongoing rank tracking and reporting</li>
@@ -81,10 +82,21 @@ const faqs = [
     </div>
   </section>
 
+  <VisualStory
+    tone="surface"
+    image="/images/visual-stories/demand-compounding.jpg"
+    alt="Search and answer signals passing through a structured system into durable compounding visibility"
+    heading="Visibility compounds when every answer rests on <span class='copper'>real authority.</span>"
+    body="Technical structure, useful content, and clear entities work together so search engines and answer engines can understand, trust, and cite the brand."
+    points={['Technical foundations that can be crawled', 'Content shaped around real intent', 'Entities machines can understand', 'Authority that strengthens over time']}
+    caption="Organic growth built as a connected knowledge and authority system."
+    motion="drift"
+  />
+
   <Faq items={faqs} eyebrow="AEO & SEO FAQ" heading="Questions about ranking and getting cited by AI." />
 
   <CtaSection
     heading="Ready to be found <span class='copper'>everywhere people search?</span>"
-    sub="Book a strategy call and we'll walk through a quick technical and AEO read on your current site — no pitch, just a straight answer."
+    sub="Book a strategy call and we'll walk through a quick technical and AEO read on your current site - no pitch, just a straight answer."
   />
 </BaseLayout>

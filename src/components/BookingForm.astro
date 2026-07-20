@@ -1,6 +1,6 @@
 ---
 /**
- * Submits via Web3Forms (https://web3forms.com) — a free form-backend service
+ * Submits via Web3Forms (https://web3forms.com) - a free form-backend service
  * that emails submissions straight to WEB3FORMS_ACCESS_KEY's owner without needing
  * any server code. Replace the placeholder below with a real access key generated
  * for gaurav.gangwar@indispensabledigital.com at https://web3forms.com/.
@@ -13,7 +13,7 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
     <div class="section-head" style="margin-bottom:40px">
       <div class="eyebrow">Book a Strategy Call</div>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Tell us about your brand.</h2>
-      <p>Fill this in and it goes straight to our inbox — we'll reply within one business day to schedule your call.</p>
+      <p>Fill this in and it goes straight to our inbox - we'll reply within one business day to schedule your call.</p>
     </div>
 
     <form
@@ -24,12 +24,12 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
       novalidate
     >
       <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
-      <input type="hidden" name="subject" value="New Strategy Call Request — Indispensable Digital" />
+      <input type="hidden" name="subject" value="New Strategy Call Request - Indispensable Digital" />
       <input type="hidden" name="from_name" value="Indispensable Digital Website" />
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
       <div class="form-row">
-        <div class="form-field">
+        <div class="form-field t-input-wrap">
           <label for="name">Full name</label>
           <input
             type="text"
@@ -40,10 +40,11 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
             maxlength="80"
             pattern="[A-Za-zÀ-ɏऀ-ॿ .'-]{2,80}"
             placeholder="Your name"
+            class="t-input"
           />
-          <span class="field-error" data-error-for="name"></span>
+          <span class="field-error t-error-msg" data-error-for="name"></span>
         </div>
-        <div class="form-field">
+        <div class="form-field t-input-wrap">
           <label for="email">Email</label>
           <input
             type="email"
@@ -52,13 +53,14 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
             required
             maxlength="120"
             placeholder="you@company.com"
+            class="t-input"
           />
-          <span class="field-error" data-error-for="email"></span>
+          <span class="field-error t-error-msg" data-error-for="email"></span>
         </div>
       </div>
 
       <div class="form-row">
-        <div class="form-field">
+        <div class="form-field t-input-wrap">
           <label for="phone">Phone</label>
           <input
             type="tel"
@@ -68,8 +70,9 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
             maxlength="20"
             pattern="[0-9+\-\s()]{7,20}"
             placeholder="+91 00000 00000"
+            class="t-input"
           />
-          <span class="field-error" data-error-for="phone"></span>
+          <span class="field-error t-error-msg" data-error-for="phone"></span>
         </div>
         <div class="form-field">
           <label for="company">Company / Brand</label>
@@ -77,7 +80,7 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
         </div>
       </div>
 
-      <div class="form-field">
+      <div class="form-field t-input-wrap">
         <label for="message">What are you looking to achieve?</label>
         <textarea
           id="message"
@@ -87,8 +90,9 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
           minlength="20"
           maxlength="2000"
           placeholder="Tell us a bit about your brand and what growth challenge you're facing."
+          class="t-input"
         ></textarea>
-        <span class="field-error" data-error-for="message"></span>
+        <span class="field-error t-error-msg" data-error-for="message"></span>
       </div>
 
       <button type="submit" class="btn btn-primary" style="width:100%;text-align:center">Send &amp; Book My Call</button>
@@ -129,8 +133,19 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
   function showFieldError(fieldName: string, message: string | null) {
     const errorEl = form?.querySelector<HTMLElement>(`[data-error-for="${fieldName}"]`);
     const input = form?.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[name="${fieldName}"]`);
+    const wrap = input?.closest<HTMLElement>('.t-input-wrap');
     if (errorEl) errorEl.textContent = message ?? '';
-    if (input) input.classList.toggle('invalid', !!message);
+    if (input) {
+      input.classList.toggle('invalid', !!message);
+      input.classList.toggle('is-error', !!message);
+    }
+    wrap?.classList.toggle('is-error', !!message);
+    if (input && message && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      input.classList.remove('is-shaking');
+      void input.offsetWidth;
+      input.classList.add('is-shaking');
+      window.setTimeout(() => input.classList.remove('is-shaking'), 300);
+    }
   }
 
   function validateField(fieldName: string): boolean {
@@ -180,7 +195,7 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
 
       if (data.success) {
         form.reset();
-        status.textContent = "Thanks — we've got your details and will reach out within one business day.";
+        status.textContent = "Thanks - we've got your details and will reach out within one business day.";
         status.classList.add('success');
         submitBtn.textContent = 'Sent';
       } else {
@@ -194,4 +209,3 @@ const WEB3FORMS_ACCESS_KEY = '2b0be720-7c3d-494a-bc87-a2a274da3765';
     }
   });
 </script>
-

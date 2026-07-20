@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DefinitionBlock from '../../components/DefinitionBlock.astro';
 import Faq from '../../components/Faq.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import VisualStory from '../../components/VisualStory.astro';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -12,7 +13,7 @@ const serviceSchema = {
   provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
   areaServed: 'Worldwide',
   description:
-    'Conversion-focused website design and development — custom builds, Shopify, WordPress and landing pages — built fast, mobile-first, and SEO-ready from day one.',
+    'Conversion-focused website design and development - custom builds, Shopify, WordPress and landing pages - built fast, mobile-first, and SEO-ready from day one.',
 };
 
 const faqs = [
@@ -22,22 +23,22 @@ const faqs = [
   },
   {
     q: 'Do you redesign existing websites, or only build new ones?',
-    a: "Both. A redesign engagement starts with an audit of what's underperforming — speed, conversion, mobile experience, SEO foundation — before we touch design, so the rebuild actually fixes the constraint rather than just looking newer.",
+    a: "Both. A redesign engagement starts with an audit of what's underperforming - speed, conversion, mobile experience, SEO foundation - before we touch design, so the rebuild actually fixes the constraint rather than just looking newer.",
   },
   {
     q: 'Are landing pages included in website development?',
-    a: 'Yes — landing pages built specifically for a campaign or offer are a core part of our web development work, built to match whatever paid or organic traffic is being sent to them.',
+    a: 'Yes - landing pages built specifically for a campaign or offer are a core part of our web development work, built to match whatever paid or organic traffic is being sent to them.',
   },
   {
     q: 'Is the website built with SEO in mind from the start?',
-    a: "Yes. Every build starts on a technically sound, fast-loading foundation — clean markup, structured data, and Core Web Vitals considered from the first sprint, not bolted on afterward.",
+    a: "Yes. Every build starts on a technically sound, fast-loading foundation - clean markup, structured data, and Core Web Vitals considered from the first sprint, not bolted on afterward.",
   },
 ];
 ---
 
 <BaseLayout
   title="Website Development Company | Indispensable Digital"
-  description="Conversion-focused website design and development — custom builds, Shopify, WordPress and landing pages — fast, mobile-first, and SEO-ready from day one."
+  description="Conversion-focused website design and development - custom builds, Shopify, WordPress and landing pages - fast, mobile-first, and SEO-ready from day one."
   schema={[serviceSchema]}
 >
   <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Website Development', href: '/services/web-development/' }]} />
@@ -47,7 +48,7 @@ const faqs = [
     <div class="wrap">
       <div class="eyebrow">Web Development</div>
       <h1>Websites built to <span class="copper">convert, not just load.</span></h1>
-      <p>Custom builds, Shopify, WordPress and landing pages — fast, mobile-first, and built on an SEO-ready technical foundation from the first sprint.</p>
+      <p>Custom builds, Shopify, WordPress and landing pages - fast, mobile-first, and built on an SEO-ready technical foundation from the first sprint.</p>
     </div>
   </section>
 
@@ -55,7 +56,7 @@ const faqs = [
     <div class="wrap">
       <DefinitionBlock
         term="A conversion-focused website"
-        definition="is built to load fast, work flawlessly on mobile, and turn visitors into leads or customers — not just look good. We design and build websites on modern, SEO-friendly foundations from the start."
+        definition="is built to load fast, work flawlessly on mobile, and turn visitors into leads or customers - not just look good. We design and build websites on modern, SEO-friendly foundations from the start."
       />
       <div class="section-head" style="margin:48px 0 32px">
         <div class="eyebrow">What's Included</div>
@@ -75,10 +76,22 @@ const faqs = [
     </div>
   </section>
 
+  <VisualStory
+    tone="surface"
+    reverse={true}
+    image="/images/visual-stories/growth-system.jpg"
+    alt="A connected digital system combining direction, communication, demand and customer experience"
+    heading="The website is where the whole strategy becomes <span class='copper'>tangible.</span>"
+    body="Positioning, content, acquisition, and measurement meet in one experience. We design the site around that complete system, then make it fast and resilient."
+    points={['Message architecture before screens', 'Responsive behavior designed deliberately', 'Conversion paths with clear intent', 'Technical foundations built to last']}
+    caption="A website designed as the working expression of the growth strategy."
+    motion="reveal"
+  />
+
   <Faq items={faqs} eyebrow="Web Development FAQ" heading="Questions about our website development work." />
 
   <CtaSection
     heading="Ready for a website that <span class='copper'>actually converts?</span>"
-    sub="Book a strategy call and we'll audit your current site's speed, mobile experience and conversion path — no pitch, just a straight read."
+    sub="Book a strategy call and we'll audit your current site's speed, mobile experience and conversion path - no pitch, just a straight read."
   />
 </BaseLayout>

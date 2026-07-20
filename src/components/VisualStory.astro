@@ -1,0 +1,49 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  eyebrow?: string;
+  heading: string;
+  body: string;
+  points?: string[];
+  caption?: string;
+  tone?: 'light' | 'dark' | 'surface';
+  reverse?: boolean;
+  motion?: 'drift' | 'reveal' | 'float';
+}
+
+const {
+  image,
+  alt,
+  eyebrow,
+  heading,
+  body,
+  points = [],
+  caption,
+  tone = 'light',
+  reverse = false,
+  motion = 'drift',
+} = Astro.props;
+---
+
+<section class:list={['visual-story', 'pad', `visual-story--${tone}`, { 'visual-story--reverse': reverse }]}>
+  <div class="wrap visual-story-grid">
+    <div class="visual-story-copy">
+      {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+      <h2 set:html={heading} />
+      <p>{body}</p>
+      {points.length > 0 && (
+        <div class="visual-story-points" role="list">
+          {points.map((point) => <div role="listitem">{point}</div>)}
+        </div>
+      )}
+    </div>
+    <figure class:list={['visual-story-media', 't-tilt', `visual-story-media--${motion}`]}>
+      <div class="visual-story-frame t-tilt-card">
+        <img src={image} alt={alt} width="1536" height="1152" loading="lazy" decoding="async" />
+        <div class="visual-story-sheen" aria-hidden="true"></div>
+      </div>
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+  </div>
+</section>

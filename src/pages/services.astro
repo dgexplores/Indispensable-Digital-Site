@@ -5,6 +5,7 @@ import CtaSection from '../components/CtaSection.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Faq from '../components/Faq.astro';
 import DefinitionBlock from '../components/DefinitionBlock.astro';
+import VisualStory from '../components/VisualStory.astro';
 
 const serviceNames = [
   'Growth Strategy',
@@ -43,11 +44,11 @@ const serviceSchema = {
 const faqs = [
   {
     q: 'Do I need all eight services, or can I start with one?',
-    a: "Most engagements start with the constraint that's actually limiting growth — often positioning or growth strategy — and expand from there. The services are designed to integrate, but they don't have to be purchased as a single bundle.",
+    a: "Most engagements start with the constraint that's actually limiting growth - often positioning or growth strategy - and expand from there. The services are designed to integrate, but they don't have to be purchased as a single bundle.",
   },
   {
     q: "What's the difference between growth strategy and brand positioning?",
-    a: 'Growth strategy is the commercial roadmap — where to play and how to win. Brand positioning is the narrative and market position that makes that strategy land with customers. We treat them as connected disciplines, not separate ones.',
+    a: 'Growth strategy is the commercial roadmap - where to play and how to win. Brand positioning is the narrative and market position that makes that strategy land with customers. We treat them as connected disciplines, not separate ones.',
   },
   {
     q: 'Do you run paid ads as well as brand and content work?',
@@ -55,18 +56,18 @@ const faqs = [
   },
   {
     q: "Which service should I choose if I'm just starting out?",
-    a: 'For an early-stage brand, we usually recommend starting with growth strategy and brand positioning — getting the category position and roadmap right before scaling content or paid acquisition on top of it. A Growth Diagnostic engagement is the fastest way to find out exactly where to start.',
+    a: 'For an early-stage brand, we usually recommend starting with growth strategy and brand positioning - getting the category position and roadmap right before scaling content or paid acquisition on top of it. A Growth Diagnostic engagement is the fastest way to find out exactly where to start.',
   },
   {
     q: 'Do you offer YouTube growth services for personal brands, or only companies?',
-    a: "Both. YouTube growth is one of our eight disciplines and applies equally to a founder building a personal brand or a company building an owned audience channel — the strategy differs, but the underlying system doesn't.",
+    a: "Both. YouTube growth is one of our eight disciplines and applies equally to a founder building a personal brand or a company building an owned audience channel - the strategy differs, but the underlying system doesn't.",
   },
 ];
 ---
 
 <BaseLayout
-  title="Marketing Services — Ads, SEO, Brand & Web | Indispensable Digital"
-  description="Google Ads, Meta Ads, SEO, website development, brand strategy, ecommerce marketing, CRO and analytics — delivered as one integrated performance marketing system."
+  title="Marketing Services - Ads, SEO, Brand & Web | Indispensable Digital"
+  description="Google Ads, Meta Ads, SEO, website development, brand strategy, ecommerce marketing, CRO and analytics - delivered as one integrated performance marketing system."
   schema={[serviceSchema]}
 >
   <Breadcrumbs items={[{ label: 'Services', href: '/services/' }]} />
@@ -76,7 +77,7 @@ const faqs = [
     <div class="wrap">
       <div class="eyebrow">What We Do</div>
       <h1>Eight disciplines. One outcome: <span class="copper">market leadership.</span></h1>
-      <p>Most agencies sell activity. We engineer advantage — integrating strategy, brand, and performance into a single system built to make you the default choice in your category.</p>
+      <p>Most agencies sell activity. We engineer advantage - integrating strategy, brand, and performance into a single system built to make you the default choice in your category.</p>
     </div>
   </section>
 
@@ -84,11 +85,27 @@ const faqs = [
     <div class="wrap">
       <DefinitionBlock
         term="These eight services"
-        definition="— growth strategy, brand positioning, PR and communications, content strategy, YouTube growth, performance marketing, customer acquisition, and marketing intelligence — are delivered as one integrated system, not separate line items, so every discipline reinforces the same category position."
+        definition=" - growth strategy, brand positioning, PR and communications, content strategy, YouTube growth, performance marketing, customer acquisition, and marketing intelligence - are delivered as one integrated system, not separate line items, so every discipline reinforces the same category position."
       />
       <ServicesGrid />
     </div>
   </section>
+
+  <VisualStory
+    tone="surface"
+    image="/images/visual-stories/demand-compounding.jpg"
+    alt="Marketing signals moving through a clear funnel and attribution system into compounding growth"
+    heading="Different disciplines. <span class='copper'>One commercial system.</span>"
+    body="Each service has a clear job, but none operates alone. Positioning shapes creative, measurement sharpens acquisition, and every channel feeds the next decision."
+    points={[
+      'Brand creates preference',
+      'Content builds authority',
+      'Performance captures demand',
+      'Intelligence improves allocation',
+    ]}
+    caption="Eight capabilities connected by one strategy and one measurement language."
+    motion="drift"
+  />
 
   <!-- CLUSTER LINKS -->
   <section class="pad" style="padding-top:0">
@@ -100,7 +117,7 @@ const faqs = [
       <div class="services-grid">
         <a class="svc" href="/services/brand-strategy/" style="display:block;text-decoration:none"><h3>Brand Strategy</h3><p>The category position every other channel builds on.</p></a>
         <a class="svc" href="/services/seo/" style="display:block;text-decoration:none"><h3>AEO &amp; SEO</h3><p>Technical and on-page SEO, plus visibility in AI answer engines.</p></a>
-        <a class="svc" href="/services/google-ads/" style="display:block;text-decoration:none"><h3>Google Ads</h3><p>Search, Shopping, Performance Max and Display — managed for ROAS.</p></a>
+        <a class="svc" href="/services/google-ads/" style="display:block;text-decoration:none"><h3>Google Ads</h3><p>Search, Shopping, Performance Max and Display - managed for ROAS.</p></a>
         <a class="svc" href="/services/meta-ads/" style="display:block;text-decoration:none"><h3>Meta Ads</h3><p>Facebook and Instagram advertising built for qualified leads and sales.</p></a>
         <a class="svc" href="/services/ecommerce-marketing/" style="display:block;text-decoration:none"><h3>Ecommerce Marketing</h3><p>Full-funnel growth for D2C and ecommerce brands.</p></a>
         <a class="svc" href="/services/web-development/" style="display:block;text-decoration:none"><h3>Web Development</h3><p>Custom, Shopify and WordPress builds designed to convert.</p></a>
@@ -114,8 +131,8 @@ const faqs = [
   <section class="manifesto pad">
     <div class="wrap">
       <div class="quote-mark">&ldquo;</div>
-      <blockquote>We don't compete for attention.<br>We build brands that <span class="copper">own it</span> — brands that lead, last, and become indispensable.</blockquote>
-      <cite>— The Indispensable Standard</cite>
+      <blockquote>We don't compete for attention.<br>We build brands that <span class="copper">own it</span> - brands that lead, last, and become indispensable.</blockquote>
+      <cite> - The Indispensable Standard</cite>
     </div>
   </section>
 
@@ -123,6 +140,6 @@ const faqs = [
 
   <CtaSection
     heading="Not sure where to start?<br>Start with <span class='copper'>clarity.</span>"
-    sub="Book a strategy call and we'll show you which of these disciplines will move your growth the most — no pitch, just a straight answer."
+    sub="Book a strategy call and we'll show you which of these disciplines will move your growth the most - no pitch, just a straight answer."
   />
 </BaseLayout>

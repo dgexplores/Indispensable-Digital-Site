@@ -2,6 +2,24 @@
 
 Multi-page marketing site built with [Astro](https://astro.build). Fully static output — fast, SEO-friendly, and free to host.
 
+## Preview
+
+- **Live website:** [www.indispensabledigital.com](https://www.indispensabledigital.com/)
+- **Services:** [www.indispensabledigital.com/services](https://www.indispensabledigital.com/services/)
+- **Approach:** [www.indispensabledigital.com/approach](https://www.indispensabledigital.com/approach/)
+- **Selected work:** [www.indispensabledigital.com/work](https://www.indispensabledigital.com/work/)
+- **Insights:** [www.indispensabledigital.com/blog](https://www.indispensabledigital.com/blog/)
+
+To preview the latest branch locally with the production build:
+
+```bash
+npm install
+npm run build
+npm run preview
+```
+
+Then open [http://localhost:4321](http://localhost:4321/). For live development with automatic reloads, use `npm run dev` instead.
+
 ## Pages
 
 | URL | File |
@@ -33,7 +51,11 @@ npm run preview    # preview the production build
 - `robots.txt`, semantic HTML, JSON-LD Organization schema
 - Zero client-side rendering — pure HTML, so crawlers see everything
 
-**Before going live:** the site URL is set to `https://www.indispensabledigital.com` in `astro.config.mjs` — update it if the domain changes. Add `public/founder.jpg` (about page photo) and optionally `public/og-image.jpg` (1200×630 social share image).
+**Before going live:** the site URL is set to `https://www.indispensabledigital.com` in `astro.config.mjs` — update it if the domain changes. Brand assets live in `public/`, including the founder portrait, custom SVG favicon, and the 1200×630 social-share image.
+
+## Design system
+
+The site uses the “Signal Intelligence” identity: Syne display typography, Plus Jakarta Sans body copy, IBM Plex Mono utility labels, a midnight/cobalt/cyan palette, and a signal-path motif. Global visual and motion tokens live at the top of `src/styles/global.css`; reduced-motion behavior and visible keyboard focus are built in.
 
 ## Deploy for free
 

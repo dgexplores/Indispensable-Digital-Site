@@ -8,11 +8,16 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const storyImages = [
+  { src: '/images/visual-stories/growth-system.jpg', alt: 'A connected strategy and brand growth system' },
+  { src: '/images/visual-stories/demand-compounding.jpg', alt: 'A measurable demand and attribution system' },
+  { src: '/images/visual-stories/senior-collaboration.jpg', alt: 'A senior team assembling a shared path to growth' },
+];
 ---
 
 <BaseLayout
-  title="Blog — Performance Marketing Insights | Indispensable Digital"
-  description="Practical guides on performance marketing, SEO, AEO, and paid media — written for founders deciding where to focus growth budget and attention."
+  title="Blog - Performance Marketing Insights | Indispensable Digital"
+  description="Practical guides on performance marketing, SEO, AEO, and paid media - written for founders deciding where to focus growth budget and attention."
 >
   <Breadcrumbs items={[{ label: 'Blog', href: '/blog/' }]} />
 
@@ -21,20 +26,25 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month:
     <div class="wrap">
       <div class="eyebrow">Insights</div>
       <h1>Practical writing on <span class="copper">growth and performance marketing.</span></h1>
-      <p>No fluff, no invented case studies — just straight answers to the questions founders actually ask before investing in growth.</p>
+      <p>No fluff, no invented case studies - just straight answers to the questions founders actually ask before investing in growth.</p>
     </div>
   </section>
 
   <section class="pad" style="padding-top:0">
     <div class="wrap">
       <div class="blog-list">
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <a class="blog-card" href={`/blog/${post.id}/`}>
-            <time datetime={post.data.publishDate.toISOString()}>
-              {dateFormatter.format(post.data.publishDate)}
-            </time>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
+            <div class="blog-card-media">
+              <img src={storyImages[index % storyImages.length].src} alt={storyImages[index % storyImages.length].alt} width="1536" height="1152" loading="lazy" decoding="async" />
+            </div>
+            <div class="blog-card-copy">
+              <time datetime={post.data.publishDate.toISOString()}>
+                {dateFormatter.format(post.data.publishDate)}
+              </time>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+            </div>
           </a>
         ))}
       </div>

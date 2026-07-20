@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DefinitionBlock from '../../components/DefinitionBlock.astro';
 import Faq from '../../components/Faq.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import VisualStory from '../../components/VisualStory.astro';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -12,13 +13,13 @@ const serviceSchema = {
   provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
   areaServed: 'Worldwide',
   description:
-    'End-to-end Google Ads management — Search, Shopping, Performance Max and Display — built around ROAS and CPA, not just clicks.',
+    'End-to-end Google Ads management - Search, Shopping, Performance Max and Display - built around ROAS and CPA, not just clicks.',
 };
 
 const faqs = [
   {
     q: 'What does a Google Ads agency actually manage?',
-    a: 'Full account architecture and ongoing management across Search, Shopping, Performance Max and Display — keyword and audience strategy, ad creative, bidding, conversion tracking, and landing page alignment — so spend is tied to a measurable return, not just impressions or clicks.',
+    a: 'Full account architecture and ongoing management across Search, Shopping, Performance Max and Display - keyword and audience strategy, ad creative, bidding, conversion tracking, and landing page alignment - so spend is tied to a measurable return, not just impressions or clicks.',
   },
   {
     q: "How is Performance Max different from standard Search campaigns?",
@@ -37,7 +38,7 @@ const faqs = [
 
 <BaseLayout
   title="Google Ads Agency & PPC Management | Indispensable Digital"
-  description="Google Ads management built for ROI — Search, Shopping, Performance Max and Display, run by a performance marketing agency that reports on ROAS, not clicks."
+  description="Google Ads management built for ROI - Search, Shopping, Performance Max and Display, run by a performance marketing agency that reports on ROAS, not clicks."
   schema={[serviceSchema]}
 >
   <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Google Ads', href: '/services/google-ads/' }]} />
@@ -47,7 +48,7 @@ const faqs = [
     <div class="wrap">
       <div class="eyebrow">Paid Search</div>
       <h1>Google Ads built for <span class="copper">ROI, not spend.</span></h1>
-      <p>Search, Shopping, Performance Max and Display — managed as one account strategy, measured against pipeline and revenue rather than clicks or impressions.</p>
+      <p>Search, Shopping, Performance Max and Display - managed as one account strategy, measured against pipeline and revenue rather than clicks or impressions.</p>
     </div>
   </section>
 
@@ -55,7 +56,7 @@ const faqs = [
     <div class="wrap">
       <DefinitionBlock
         term="A Google Ads agency"
-        definition="manages your Search, Shopping, Performance Max and Display campaigns end-to-end — keyword and audience strategy, ad creative, bidding, and landing pages — so every unit of ad spend is tied to a measurable return."
+        definition="manages your Search, Shopping, Performance Max and Display campaigns end-to-end - keyword and audience strategy, ad creative, bidding, and landing pages - so every unit of ad spend is tied to a measurable return."
       />
       <div class="section-head" style="margin:48px 0 32px">
         <div class="eyebrow">What's Included</div>
@@ -75,10 +76,21 @@ const faqs = [
     </div>
   </section>
 
+  <VisualStory
+    reverse={true}
+    image="/images/visual-stories/demand-compounding.jpg"
+    alt="Search signals flowing through a precise funnel and attribution system into compounding growth"
+    heading="Intent is useful only when it becomes <span class='copper'>profitable demand.</span>"
+    body="We connect query, creative, landing page, conversion quality, and revenue so optimization follows the complete customer journey."
+    points={['Intent-led account structure', 'Landing pages aligned to the query', 'Revenue-grade conversion tracking', 'Budget moved by marginal return']}
+    caption="Paid search managed as a measurable commercial system."
+    motion="reveal"
+  />
+
   <Faq items={faqs} eyebrow="Google Ads FAQ" heading="Questions about Google Ads management." />
 
   <CtaSection
     heading="Ready to make Google Ads <span class='copper'>accountable to revenue?</span>"
-    sub="Book a strategy call and we'll audit where your current account is leaking spend — no pitch, just a straight read."
+    sub="Book a strategy call and we'll audit where your current account is leaking spend - no pitch, just a straight read."
   />
 </BaseLayout>
