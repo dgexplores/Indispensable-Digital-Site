@@ -1,0 +1,21 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<span class:list={['brand-lockup', className]}>
+  <svg class="logo-symbol" viewBox="0 0 44 44" aria-hidden="true">
+    <g class="logo-symbol-inner">
+      <circle class="logo-dot" cx="8" cy="7" r="3.5" />
+      <path class="logo-i" d="M4.5 15h7v24h-7z" />
+      <path class="logo-d" d="M17 5h7c10.2 0 16 6.6 16 17s-5.8 17-16 17h-7V29h7c4.5 0 6.7-2.5 6.7-7s-2.2-7-6.7-7h-7V5Z" />
+    </g>
+  </svg>
+  <span class="logo-wordmark">
+    <strong>indispensable<span aria-hidden="true">.</span></strong>
+    <small>digital</small>
+  </span>
+</span>

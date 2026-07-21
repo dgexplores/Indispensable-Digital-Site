@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaSection from '../components/CtaSection.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import VisualStory from '../components/VisualStory.astro';
 
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'The Indispensable Digital growth method',
-  description: 'Every engagement moves through the same four-step arc — from sharp strategic thinking to measurable, compounding growth.',
+  description: 'Every engagement moves through the same four-step arc - from sharp strategic thinking to measurable, compounding growth.',
   step: [
     {
       '@type': 'HowToStep',
@@ -39,7 +40,7 @@ const howToSchema = {
 
 <BaseLayout
   title="Growth Strategy Framework | Indispensable Digital"
-  description="Our four-step growth consulting method — Strategy, Story, Growth, Impact — moves engagements from sharp thinking to measurable, compounding growth."
+  description="Our four-step growth consulting method - Strategy, Story, Growth, Impact - moves engagements from sharp thinking to measurable, compounding growth."
   schema={[howToSchema]}
 >
   <Breadcrumbs items={[{ label: 'Approach', href: '/approach/' }]} />
@@ -49,7 +50,7 @@ const howToSchema = {
     <div class="wrap">
       <div class="eyebrow">How We Work</div>
       <h1>A method, <span class="copper">not a menu.</span></h1>
-      <p>Every engagement moves through the same disciplined arc — from sharp thinking to measurable, compounding results.</p>
+      <p>Every engagement moves through the same disciplined arc - from sharp thinking to measurable, compounding results.</p>
     </div>
   </section>
 
@@ -64,6 +65,22 @@ const howToSchema = {
       </div>
     </div>
   </section>
+
+  <VisualStory
+    reverse={true}
+    image="/images/visual-stories/growth-system.jpg"
+    alt="Four strategic modules connected to one illuminated operating core"
+    heading="The sequence matters as much as <span class='copper'>the work.</span>"
+    body="Positioning before promotion. Measurement before scale. Each move creates the clarity needed for the next one, so effort compounds instead of restarting."
+    points={[
+      'Diagnose the binding constraint',
+      'Set the category thesis',
+      'Build the demand engine',
+      'Learn and compound',
+    ]}
+    caption="A deliberate sequence turns four disciplines into one growth system."
+    motion="reveal"
+  />
 
   <!-- WHY -->
   <section class="pad">

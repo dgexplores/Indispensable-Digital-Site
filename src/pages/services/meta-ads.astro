@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DefinitionBlock from '../../components/DefinitionBlock.astro';
 import Faq from '../../components/Faq.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import VisualStory from '../../components/VisualStory.astro';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -12,32 +13,32 @@ const serviceSchema = {
   provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
   areaServed: 'Worldwide',
   description:
-    'Facebook and Instagram advertising management — audience strategy, creative testing, and full-funnel budget allocation built around qualified leads and sales.',
+    'Facebook and Instagram advertising management - audience strategy, creative testing, and full-funnel budget allocation built around qualified leads and sales.',
 };
 
 const faqs = [
   {
     q: "What's the difference between Meta Ads and Google Ads?",
-    a: 'Google Ads captures existing intent — people already searching for a solution. Meta Ads (Facebook and Instagram) create demand by reaching people based on interests, behavior and lookalike audiences before they start searching. Most brands need both, but the strategy and creative for each are different.',
+    a: 'Google Ads captures existing intent - people already searching for a solution. Meta Ads (Facebook and Instagram) create demand by reaching people based on interests, behavior and lookalike audiences before they start searching. Most brands need both, but the strategy and creative for each are different.',
   },
   {
     q: 'Do you handle ad creative production?',
-    a: "We direct and brief creative — angles, hooks, formats that perform on Meta — and can produce or work with your existing creative team or content library. Creative testing velocity is usually the biggest lever on Meta, so it's built into the management, not treated as a separate line item.",
+    a: "We direct and brief creative - angles, hooks, formats that perform on Meta - and can produce or work with your existing creative team or content library. Creative testing velocity is usually the biggest lever on Meta, so it's built into the management, not treated as a separate line item.",
   },
   {
     q: 'Do you set up retargeting as part of Meta Ads management?',
-    a: "Yes. Meta Pixel and Conversions API setup, audience segmentation, and retargeting sequences across the funnel are part of the core management — not an add-on.",
+    a: "Yes. Meta Pixel and Conversions API setup, audience segmentation, and retargeting sequences across the funnel are part of the core management - not an add-on.",
   },
   {
     q: 'Is Meta Ads a good fit for ecommerce and D2C brands?',
-    a: 'Yes — Meta remains one of the strongest acquisition and retargeting channels for ecommerce and D2C brands specifically, when paired with accurate tracking (Pixel + Conversions API) and product-page-aligned creative.',
+    a: 'Yes - Meta remains one of the strongest acquisition and retargeting channels for ecommerce and D2C brands specifically, when paired with accurate tracking (Pixel + Conversions API) and product-page-aligned creative.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Meta Ads Agency — Facebook & Instagram Ads | Indispensable Digital"
-  description="Meta Ads management for Facebook and Instagram — audience strategy, creative testing, and full-funnel budgeting built for qualified leads and sales."
+  title="Meta Ads Agency - Facebook & Instagram Ads | Indispensable Digital"
+  description="Meta Ads management for Facebook and Instagram - audience strategy, creative testing, and full-funnel budgeting built for qualified leads and sales."
   schema={[serviceSchema]}
 >
   <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'Meta Ads', href: '/services/meta-ads/' }]} />
@@ -47,7 +48,7 @@ const faqs = [
     <div class="wrap">
       <div class="eyebrow">Paid Social</div>
       <h1>Meta Ads that turn <span class="copper">attention into revenue.</span></h1>
-      <p>Facebook and Instagram advertising — audience strategy, creative testing, and full-funnel budget allocation — measured on qualified leads and sales, not impressions.</p>
+      <p>Facebook and Instagram advertising - audience strategy, creative testing, and full-funnel budget allocation - measured on qualified leads and sales, not impressions.</p>
     </div>
   </section>
 
@@ -55,7 +56,7 @@ const faqs = [
     <div class="wrap">
       <DefinitionBlock
         term="A Meta Ads agency"
-        definition="manages Facebook and Instagram advertising — audience strategy, creative testing, and budget allocation across the funnel — so paid social drives qualified leads and sales, not just impressions."
+        definition="manages Facebook and Instagram advertising - audience strategy, creative testing, and budget allocation across the funnel - so paid social drives qualified leads and sales, not just impressions."
       />
       <div class="section-head" style="margin:48px 0 32px">
         <div class="eyebrow">What's Included</div>
@@ -65,20 +66,31 @@ const faqs = [
         <div class="why-col why-us" style="border-left:none">
           <ul>
             <li><span class="tick">✓</span> Meta Pixel and Conversions API setup</li>
-            <li><span class="tick">✓</span> Full-funnel campaign structure — awareness, consideration, conversion</li>
+            <li><span class="tick">✓</span> Full-funnel campaign structure - awareness, consideration, conversion</li>
             <li><span class="tick">✓</span> Creative direction and ongoing creative testing</li>
             <li><span class="tick">✓</span> Audience segmentation and retargeting strategy</li>
-            <li><span class="tick">✓</span> Reporting tied to leads, sales and CAC — not reach</li>
+            <li><span class="tick">✓</span> Reporting tied to leads, sales and CAC - not reach</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <VisualStory
+    reverse={true}
+    image="/images/visual-stories/demand-compounding.jpg"
+    alt="Audience signals moving through creative, attribution and growth systems"
+    heading="Attention becomes valuable when the system knows <span class='copper'>what to learn.</span>"
+    body="Creative, audience, offer, landing page, and conversion quality are treated as one learning loop, not five separate optimization tasks."
+    points={['Creative built around the brand position', 'Audiences tested against a clear thesis', 'Offers connected to customer intent', 'Learning carried into every new cycle']}
+    caption="Paid social built to learn, convert, and compound."
+    motion="reveal"
+  />
+
   <Faq items={faqs} eyebrow="Meta Ads FAQ" heading="Questions about Meta Ads management." />
 
   <CtaSection
     heading="Ready to make paid social <span class='copper'>a revenue channel?</span>"
-    sub="Book a strategy call and we'll show you where your current Meta account is leaving performance on the table — no pitch, just a straight read."
+    sub="Book a strategy call and we'll show you where your current Meta account is leaving performance on the table - no pitch, just a straight read."
   />
 </BaseLayout>

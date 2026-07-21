@@ -1,4 +1,4 @@
-# Indispensable Digital — robots.txt
+# Indispensable Digital - robots.txt
 # https://www.indispensabledigital.com
 
 # Default: allow all crawlers full access to the site
@@ -12,7 +12,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# AI answer engines / LLM crawlers — explicitly allowed for AEO
+# AI answer engines / LLM crawlers - explicitly allowed for AEO
 # (site also publishes /llms.txt for these crawlers)
 User-agent: GPTBot
 Allow: /

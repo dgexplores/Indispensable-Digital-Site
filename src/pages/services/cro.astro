@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DefinitionBlock from '../../components/DefinitionBlock.astro';
 import Faq from '../../components/Faq.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import VisualStory from '../../components/VisualStory.astro';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -12,17 +13,17 @@ const serviceSchema = {
   provider: { '@id': 'https://www.indispensabledigital.com/#organization' },
   areaServed: 'Worldwide',
   description:
-    'Conversion rate optimization — landing page and funnel audits, A/B testing, and checkout optimization built to convert the traffic you already have.',
+    'Conversion rate optimization - landing page and funnel audits, A/B testing, and checkout optimization built to convert the traffic you already have.',
 };
 
 const faqs = [
   {
     q: "How is CRO different from web design?",
-    a: 'Web design is about how a page looks and functions. CRO is the systematic process of testing what actually gets more visitors to convert — layout, copy, offers, checkout flow — using data and experiments rather than opinion. A well-designed page can still convert poorly without CRO behind it.',
+    a: 'Web design is about how a page looks and functions. CRO is the systematic process of testing what actually gets more visitors to convert - layout, copy, offers, checkout flow - using data and experiments rather than opinion. A well-designed page can still convert poorly without CRO behind it.',
   },
   {
     q: 'How long before we see a conversion uplift?',
-    a: "Simple fixes from an initial audit (page speed, form friction, unclear offers) can show impact within weeks. Structured A/B testing programs typically need enough traffic volume to reach statistical significance, so timelines depend on your current traffic — we scope this honestly before starting.",
+    a: "Simple fixes from an initial audit (page speed, form friction, unclear offers) can show impact within weeks. Structured A/B testing programs typically need enough traffic volume to reach statistical significance, so timelines depend on your current traffic - we scope this honestly before starting.",
   },
   {
     q: 'Do we need a lot of existing traffic for CRO to work?',
@@ -30,14 +31,14 @@ const faqs = [
   },
   {
     q: 'What pages do you typically optimize first?',
-    a: "Usually wherever the biggest drop-off in your funnel already is — often the landing page, product page, or checkout flow — rather than optimizing pages evenly across the site regardless of traffic or impact.",
+    a: "Usually wherever the biggest drop-off in your funnel already is - often the landing page, product page, or checkout flow - rather than optimizing pages evenly across the site regardless of traffic or impact.",
   },
 ];
 ---
 
 <BaseLayout
   title="Conversion Rate Optimization (CRO) Services | Indispensable Digital"
-  description="Conversion rate optimization — landing page and funnel audits, A/B testing, and checkout optimization built to convert the traffic you already have."
+  description="Conversion rate optimization - landing page and funnel audits, A/B testing, and checkout optimization built to convert the traffic you already have."
   schema={[serviceSchema]}
 >
   <Breadcrumbs items={[{ label: 'Services', href: '/services/' }, { label: 'CRO', href: '/services/cro/' }]} />
@@ -47,7 +48,7 @@ const faqs = [
     <div class="wrap">
       <div class="eyebrow">Conversion Rate Optimization</div>
       <h1>Convert more of the traffic <span class="copper">you're already paying for.</span></h1>
-      <p>Landing page and funnel audits, A/B testing, and checkout optimization — built to lift conversion rate before you spend more on acquisition.</p>
+      <p>Landing page and funnel audits, A/B testing, and checkout optimization - built to lift conversion rate before you spend more on acquisition.</p>
     </div>
   </section>
 
@@ -55,7 +56,7 @@ const faqs = [
     <div class="wrap">
       <DefinitionBlock
         term="Conversion rate optimization"
-        definition="is the systematic process of testing and improving what happens after a visitor lands on your site — page structure, offers, and checkout flow — so the traffic you already have converts at a higher rate."
+        definition="is the systematic process of testing and improving what happens after a visitor lands on your site - page structure, offers, and checkout flow - so the traffic you already have converts at a higher rate."
       />
       <div class="section-head" style="margin:48px 0 32px">
         <div class="eyebrow">What's Included</div>
@@ -75,10 +76,21 @@ const faqs = [
     </div>
   </section>
 
+  <VisualStory
+    tone="surface"
+    image="/images/visual-stories/demand-compounding.jpg"
+    alt="Customer signals moving through a focused conversion path into measurable growth"
+    heading="Conversion improves when friction becomes <span class='copper'>visible.</span>"
+    body="We connect behavioral evidence, message clarity, offer strength, and interface decisions so each test answers a useful commercial question."
+    points={['Find the highest-cost friction first', 'Form a testable customer hypothesis', 'Measure quality as well as quantity', 'Carry learning across the full journey']}
+    caption="Conversion work organized around evidence, not random interface changes."
+    motion="drift"
+  />
+
   <Faq items={faqs} eyebrow="CRO FAQ" heading="Questions about conversion rate optimization." />
 
   <CtaSection
     heading="Ready to fix the leak <span class='copper'>before scaling spend?</span>"
-    sub="Book a strategy call and we'll walk through where your funnel is losing the most conversions — no pitch, just a straight read."
+    sub="Book a strategy call and we'll walk through where your funnel is losing the most conversions - no pitch, just a straight read."
   />
 </BaseLayout>

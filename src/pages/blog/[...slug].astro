@@ -16,6 +16,11 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const articleVisual = post.id.includes('youtube')
+  ? { src: '/images/visual-stories/senior-collaboration.jpg', alt: 'A team assembling connected paths toward a shared audience goal' }
+  : post.id.includes('ads')
+    ? { src: '/images/visual-stories/demand-compounding.jpg', alt: 'A precise performance system turning signals into compounding growth' }
+    : { src: '/images/visual-stories/growth-system.jpg', alt: 'A connected system joining strategy, brand, demand and customer experience' };
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -51,6 +56,9 @@ const articleSchema = {
 
   <section class="pad" style="padding-top:0">
     <div class="wrap">
+      <figure class="article-visual">
+        <img src={articleVisual.src} alt={articleVisual.alt} width="1536" height="1152" decoding="async" />
+      </figure>
       <div class="blog-meta">
         <time datetime={post.data.publishDate.toISOString()}>{dateFormatter.format(post.data.publishDate)}</time>
         <span>·</span>
