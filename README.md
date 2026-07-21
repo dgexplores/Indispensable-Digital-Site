@@ -4,6 +4,7 @@ Multi-page marketing site built with [Astro](https://astro.build). Fully static 
 
 ## Preview
 
+- **Vercel production preview:** [indispensable-digital.vercel.app](https://indispensable-digital.vercel.app/)
 - **Live website:** [www.indispensabledigital.com](https://www.indispensabledigital.com/)
 - **Services:** [www.indispensabledigital.com/services](https://www.indispensabledigital.com/services/)
 - **Approach:** [www.indispensabledigital.com/approach](https://www.indispensabledigital.com/approach/)
