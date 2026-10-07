@@ -2,7 +2,7 @@
 
 > An independent growth consultancy aligning strategy, positioning and performance so ambitious brands become understood, preferred and chosen.
 
-[View the latest website](https://indispensable-digital.vercel.app/) · [Visit the primary domain](https://www.indispensabledigital.com/) · [Start a conversation](https://indispensable-digital.vercel.app/contact/#book-call)
+[View the latest website](https://dgdeveloped.vercel.app/) · [Visit the primary domain](https://www.indispensabledigital.com/) · [Start a conversation](https://dgdeveloped.vercel.app/contact/#book-call)
 
 ## About the business
 
@@ -45,7 +45,7 @@ The work is senior-led from diagnosis through execution and is measured against 
 
 The Vercel URL contains the latest approved redesign.
 
-- **Latest production deployment:** [indispensable-digital.vercel.app](https://indispensable-digital.vercel.app/)
+- **Latest production deployment:** [dgdeveloped.vercel.app](https://dgdeveloped.vercel.app/)
 - **Primary brand domain:** [www.indispensabledigital.com](https://www.indispensabledigital.com/)
 - **GitHub repository:** [dgexplores/Indispensable-Digital](https://github.com/dgexplores/Indispensable-Digital)
 
@@ -53,13 +53,13 @@ The Vercel URL contains the latest approved redesign.
 
 | Page | Purpose |
 |---|---|
-| [Home](https://indispensable-digital.vercel.app/) | Positioning, operating philosophy, capabilities and primary calls to action. |
-| [Services](https://indispensable-digital.vercel.app/services/) | Complete service overview and links to every specialist service page. |
-| [Approach](https://indispensable-digital.vercel.app/approach/) | The Strategy, Story, Growth and Impact engagement method. |
-| [Ways to Work](https://indispensable-digital.vercel.app/work/) | Growth Diagnostic, Positioning Sprint and Fractional Growth Partner options. |
-| [About](https://indispensable-digital.vercel.app/about/) | Founder background and consultancy philosophy. |
-| [Insights](https://indispensable-digital.vercel.app/blog/) | Articles and case studies covering growth, paid media, SEO and AEO. |
-| [Contact](https://indispensable-digital.vercel.app/contact/) | Contact details and strategy-call enquiry form. |
+| [Home](https://dgdeveloped.vercel.app/) | Positioning, operating philosophy, capabilities and primary calls to action. |
+| [Services](https://dgdeveloped.vercel.app/services/) | Complete service overview and links to every specialist service page. |
+| [Approach](https://dgdeveloped.vercel.app/approach/) | The Strategy, Story, Growth and Impact engagement method. |
+| [Ways to Work](https://dgdeveloped.vercel.app/work/) | Growth Diagnostic, Positioning Sprint and Fractional Growth Partner options. |
+| [About](https://dgdeveloped.vercel.app/about/) | Founder background and consultancy philosophy. |
+| [Insights](https://dgdeveloped.vercel.app/blog/) | Articles and case studies covering growth, paid media, SEO and AEO. |
+| [Contact](https://dgdeveloped.vercel.app/contact/) | Contact details and strategy-call enquiry form. |
 
 ---
 
@@ -206,12 +206,12 @@ Motion includes reduced-motion fallbacks, and interactive controls include visib
 
 ### Current production
 
-- **Vercel URL:** [indispensable-digital.vercel.app](https://indispensable-digital.vercel.app/)
+- **Vercel URL:** [dgdeveloped.vercel.app](https://dgdeveloped.vercel.app/)
 - **Production branch:** `main`
 - **Build command:** `npm run build`
 - **Output directory:** `dist`
 
-The repository does not currently contain a `.vercel/project.json` link file. Do not assume that every GitHub push automatically redeploys Vercel. To enable automatic deployments, connect the GitHub repository to the `indispensable-digital` project in Vercel and select `main` as the production branch.
+The repository does not currently contain a `.vercel/project.json` link file. Do not assume that every GitHub push automatically redeploys Vercel. To enable automatic deployments, connect the GitHub repository to the `dgdeveloped` project in Vercel and select `main` as the production branch.
 
 ### Recommended publishing workflow
 
@@ -240,9 +240,9 @@ The repository does not currently contain a `.vercel/project.json` link file. Do
 
 ## Legal and operational pages
 
-- [Privacy Policy](https://indispensable-digital.vercel.app/privacy-policy/)
-- [Terms & Conditions](https://indispensable-digital.vercel.app/terms-and-conditions/)
-- [Contact](https://indispensable-digital.vercel.app/contact/)
+- [Privacy Policy](https://dgdeveloped.vercel.app/privacy-policy/)
+- [Terms & Conditions](https://dgdeveloped.vercel.app/terms-and-conditions/)
+- [Contact](https://dgdeveloped.vercel.app/contact/)
 
 These pages are operational templates and should be reviewed by a qualified legal professional whenever services, tracking, data handling, jurisdictions or contact details change.
 
