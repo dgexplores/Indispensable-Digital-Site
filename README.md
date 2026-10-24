@@ -47,7 +47,7 @@ The Vercel URL contains the latest approved redesign.
 
 - **Latest production deployment:** [dgdeveloped.vercel.app](https://dgdeveloped.vercel.app/)
 - **Primary brand domain:** [www.indispensabledigital.com](https://www.indispensabledigital.com/)
-- **GitHub repository:** [dgexplores/Indispensable-Digital](https://github.com/dgexplores/Indispensable-Digital)
+- **GitHub repository (public):** [dgexplores/Indispensable-Digital-Site](https://github.com/dgexplores/Indispensable-Digital-Site)
 
 ### Website tour
 
@@ -95,8 +95,8 @@ This architecture is appropriate for a fast marketing website. Contact enquiries
 ### First-time setup
 
 ```bash
-git clone git@github.com:dgexplores/Indispensable-Digital.git
-cd Indispensable-Digital
+git clone https://github.com/dgexplores/Indispensable-Digital-Site.git
+cd Indispensable-Digital-Site
 npm install
 npm run dev
 ```
