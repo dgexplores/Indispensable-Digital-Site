@@ -4,6 +4,110 @@
 
 [View the latest website](https://dgdeveloped.vercel.app/) · [Visit the primary domain](https://www.indispensabledigital.com/) · [Start a conversation](https://dgdeveloped.vercel.app/contact/#book-call)
 
+> **🌐 Where the panel is right now:** this is internship project 2 of 3, presented by **Deepak Gangwar** (B.Tech IT, SRMS CET Bareilly; mentor: **Mr. Gaurav Gangwar**). It is the **public source of the deployed live site** — the private mirror `dgexplores/Indispensable-Digital` feeds the Vercel deployment and stays private. Customer enquiries, business correspondence, access keys and analytics raw data stay out of version control — they are **confidential to the company**, in every configuration or export.
+
+---
+
+## 🎬 Demo video — what it is & how to use it
+
+<p align="center">
+  <a href="https://github.com/dgexplores/Indispensable-Digital-Site/blob/main/docs/demo_indispensable.mp4">
+    <img src="docs/demo_poster.png" alt="Watch the 34-second demo — recorded screen capture of the live production site" width="860">
+  </a>
+  <br><sub>▶ <b>Click the poster</b> to play the 34-second demo in GitHub's built-in player — or download the <a href="https://github.com/dgexplores/Indispensable-Digital-Site/raw/main/docs/demo_indispensable.mp4">raw mp4</a> (1.4 MB)</sub>
+</p>
+
+*(Recorded screen capture of the **real deployed site** — no mockups, no AI-generated UI. The strategy-call form is never actually submitted in the video; enquiries land in the company inbox via Web3Forms.)*
+
+**Timeline of the video (captions are on-screen):**
+
+| Caption | What you are seeing |
+|---|---|
+| Indispensable Digital — live production site | Landing hero: *"Make your brand the default."* + primary CTA |
+| 01 · One thesis | *"Strategy, brand & performance, connected"* — the connected operating-system story band |
+| 02 · Services | *"Eight disciplines, one outcome: market leadership"* — the full service architecture |
+| 03 · Approach | Strategy → Story → Growth → Impact, the senior-led method |
+| 04 · Ways to work | Growth Diagnostic · Brand & Positioning Sprint · Fractional Growth Partner |
+| 05–06 · Contact | Booking-form tour: client-side validation; submits via Web3Forms to the company inbox (not demonstrated live) |
+
+**How a visitor uses it (30 seconds):**
+1. Open [https://dgdeveloped.vercel.app](https://dgdeveloped.vercel.app/) — positioning and proof land before the fold.
+2. Move through **Services →** every capability page, **Approach** → the working method, **Work** → engagement options, **Insights** → articles.
+3. Hit **Start a conversation** → the booking form validates in the browser and emails through Web3Forms — no database, no spam exposure.
+4. Mobile-resize anytime: the design system (Signal Intelligence) re-flows with reduced-motion fallbacks intact.
+
+## 🧭 How the site works (architecture)
+
+```mermaid
+flowchart LR
+    subgraph Source["Repository (Astro 5 · static output)"]
+        P["src/pages — home · services(12 specialist pages)<br/>approach · work · about · blog · contact"]
+        C["src/content/blog — Markdown content collection"]
+        L["BaseLayout — SEO defaults · OG/Twitter cards<br/>structured data · GA4 + Clarity scripts"]
+        F["BookingForm.astro — labelled fields<br/>client-side validation"]
+    end
+    subgraph Deploy["Hosting"]
+        V["Vercel CDN<br/>dgdeveloped.vercel.app<br/>www.indispensabledigital.com"]
+    end
+    subgraph Services["Third-party (config outside repo)"]
+        W["Web3Forms → company inbox"]
+        GA["Google Analytics"]
+        CL["Microsoft Clarity"]
+    end
+    P --> B["astro build → dist/"]
+    C --> B
+    L --> B
+    B --> V
+    V -->|visitor browses| GA
+    V -->|session replays| CL
+    F -->|POST on submit| W
+```
+
+**Key technical points:**
+- **Fully static at build time** — zero first-party backend, no database, no auth: attack surface is small and hosting is cheap/fast.
+- **Enquiries never touch a repo server** — `BookingForm.astro` posts to Web3Forms; nothing is stored in Git or a first-party DB.
+- **SEO-complete** — unique titles/descriptions, canonical URLs, Organization/FAQ/Service structured data, auto sitemap, `robots.txt` + `llms.txt`, 1200×630 social image.
+- **Design system "Signal Intelligence"** — Syne / Plus Jakarta Sans / IBM Plex Mono, signal-path motif, reduced-motion + keyboard-focus fallbacks.
+
+## ✅ Capabilities (as of now)
+
+| Area | Status |
+|---|---|
+| Multi-page responsive site (home · services + 12 specialist pages · approach · work · about · insights · contact · legal pages) | ✅ live |
+| Strategy-call enquiry: browser validation → Web3Forms email delivery | ✅ live |
+| SEO suite (titles · canonical · OG/Twitter · structured data · sitemap · robots.txt · llms.txt · social image) | ✅ live |
+| Analytics: GA4 + Microsoft Clarity | ✅ live |
+| AEO answer-engine visibility (`llms.txt`, semantic crawlable static HTML) | ✅ live |
+| Blog publishing workflow (content collections + build validation) | ✅ documented & used |
+| Reduced-motion, focus states, responsive breakpoints | ✅ in code |
+| Enquiry storage / CRM integration | ❌ by design — future work (form emails directly) |
+| Auto-deploy on push | ⚙️ manual checklist flow — GitHub→Vercel connection documented in the handbook below |
+
+## 🙋 FAQ — questions the presentation panel may ask
+
+**Q. What did you actually do on this site?**
+> Front-end depth during the internship: responsive layout work, form accessibility and validation behaviour, SEO wiring (titles, canonical, structured data, sitemap/robots), and the owner/developer handbook that this README carries. The site runs live in production on Vercel with the company's domain.
+
+**Q. Why Astro and not React/Next?**
+> It is a content-heavy marketing site that ships mostly HTML. Astro gives multi-route static output with near-zero client JavaScript by default — fast LCP, clean SEO — and Web3Forms removes the need for a backend, so a heavier framework would add cost with no benefit.
+
+**Q. Where do contact-form submissions go?**
+> `BookingForm.astro` validates in the browser and posts to Web3Forms; submissions arrive at the company's configured inbox. No database, no first-party storage — the access key and inbox are held outside this repo.
+
+**Q. Why are the GA/Clarity IDs visible in the README?**
+> Measurement IDs are client-side by design and public in the page source of every deployed page; they are not secrets. The confidential parts — Web3Forms access key, the receiving inbox, customer enquiries and analytics exports — are never committed.
+
+**Q. Why two repositories — private and public?**
+> The private mirror `Indispensable-Digital` stays attached to the Vercel deployment; this public repo (`-Site`) is the showcase copy with the same history. Documentation links here point only to the public one so anyone can clone and run it.
+
+**Q. Is this actually in production?**
+> Yes — deployed on Vercel, serving `www.indispensabledigital.com` with legal pages, analytics and the full SEO bundle. Of the three internship projects, this is the one closest to production reality.
+
+**Q. What would you add next?**
+> GitHub→Vercel auto-deploy tightening, enquiry → CRM handoff, CMS-driven content updates for non-technical editors, and continued AEO experiments — all listed in the pre-launch checklist below.
+
+---
+
 ## About the business
 
 Indispensable Digital works with founders and leadership teams that want to become the default choice in their category. Instead of treating strategy, brand, content and acquisition as separate activities, the consultancy connects them into one accountable growth system.
